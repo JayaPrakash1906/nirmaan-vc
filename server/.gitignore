@@ -1,0 +1,4 @@
+node_modules
+*.rest
+*.lock
+.env.example
