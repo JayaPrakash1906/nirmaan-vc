@@ -21,6 +21,7 @@ import UploadFile from './pages/UploadFile/UploadFile';
 import View from './pages/UploadFile/View';
 import ViewComponents from './pages/UploadFile/ViewComponents';
 // import Todo from '../src/__test__/todo'
+import ProtectedRoutes from './utils/ProtectedRoutes';
 function App() {
   const [LoggedIn, setLoggedIn] = useState(false);
   const authenticate = async() => {
@@ -53,27 +54,30 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-              <Route path="/" element={<Login />} />  
-              <Route path="/Home" element={<Home />} />
-              <Route path="/connections" element={<Connections />} />
-              <Route path="/profile" element={<Connections/>} />
-              {/* <Route path="/signout" element={<Home />} /> */}
-              <Route path="/addconnections" element={<Forms />} />
-              <Route path="/startups" element={<Startups />} />
-              <Route path="/mentors" element={<Mentors />} />
-              <Route path="/events" element={<Events/>} />
-              <Route path="/mentorship" element={<MentorShip/>} />
-              <Route path="/startup/new" element={<AddStartup/>} />
-              <Route path="/settings" element={<Settings/>} />
-              <Route path="/events/new" element={<CreateNewEvent />} />
-              <Route path="/contacts" element={<Contacts/>} /> 
-              <Route path="/mentor/new" element={<AddNewMentor />} />
-              <Route path="/reports" element={<Reports />} />
-              <Route path="/events/request-speaker" element={<RequestSpeaker/>} />  
-              <Route path="/customer/Home" element={< CustomerHome/>}  />
-              <Route path="/customer/resume" element={<Resume />} />
-              <Route path="/uploads" element={<UploadFile />} />
-              <Route path="/view/uploads" element={<ViewComponents/> }/>
+           <Route path="/" element={<Login />} />  
+            <Route element={<ProtectedRoutes/>}>
+                  <Route path="/Home" element={<Home />} />
+                  <Route path="/connections" element={<Connections />} />
+                  <Route path="/profile" element={<Connections/>} />
+                  <Route path="/addconnections" element={<Forms />} />
+                  <Route path="/startups" element={<Startups />} />
+                  <Route path="/mentors" element={<Mentors />} />
+                  <Route path="/events" element={<Events/>} />
+                  <Route path="/mentorship" element={<MentorShip/>} />
+                  <Route path="/startup/new" element={<AddStartup/>} />
+                  <Route path="/settings" element={<Settings/>} />
+                  <Route path="/events/new" element={<CreateNewEvent />} />
+                  <Route path="/contacts" element={<Contacts/>} /> 
+                  <Route path="/mentor/new" element={<AddNewMentor />} />
+                  <Route path="/reports" element={<Reports />} />
+                  <Route path="/events/request-speaker" element={<RequestSpeaker/>} />  
+                  <Route path="/customer/Home" element={< CustomerHome/>}  />
+                  <Route path="/customer/resume" element={<Resume />} />
+                  <Route path="/uploads" element={<UploadFile />} />
+                  <Route path="/view/uploads" element={<ViewComponents/> }/>
+            </Route>
+                            {/* <Route path="/signout" element={<Home />} /> */}
+
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
         </Routes>
       </BrowserRouter>
