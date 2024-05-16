@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { FaBars, FaBook, FaCalendar, FaChalkboardTeacher, FaFilePdf, FaFileUpload, FaGraduationCap, FaHome, FaPeopleArrows} from 'react-icons/fa';
+import { FaBars, FaBook, FaCalendar, FaChalkboardTeacher, FaFilePdf, FaFileUpload, FaGraduationCap, FaHome, FaPencilAlt, FaPeopleArrows} from 'react-icons/fa';
 
 function SideBar() {
     const [userRole, setUserRole] = useState('customer');  
@@ -30,7 +30,10 @@ function SideBar() {
           <SideBarIcon icon={<FaFilePdf size="16" />} tooltipText="Reports" />
       </SideBarLink>
       <SideBarLink href="/uploads">
-          <SideBarIcon icon={<FaFileUpload size="16" />} tooltipText="uploads" />
+          <SideBarIcon icon={<FaFileUpload size="16" />} tooltipText="Uploads" />
+      </SideBarLink>
+      <SideBarLink href="/cms">
+          <SideBarIcon icon={<FaPencilAlt size="16" />} tooltipText="Content Management System" />
       </SideBarLink>
     </div>
   );
@@ -57,7 +60,7 @@ const SideBarIcon = ({ icon, tooltipText }) => {
 
   return (
     <div
-      className="relative flex items-center justify-center h-10 w-10 mt-4 mb-1 mx-auto shadow-lg bg-gray-900 text-green-500 hover:bg-green-600 hover:text-white rounded-3xl hover:rounded-xl transition-all duration-300 cursor-pointer group active:scale-[.98] active:duration-75 hover:scale-[1.02] ease-in-out transition-all"
+      className="relative flex items-center justify-center h-10 w-10 lg:mt-2  mb-1 mx-auto shadow-lg bg-gray-900 text-green-500 hover:bg-green-600 hover:text-white rounded-3xl hover:rounded-xl transition-all duration-300 cursor-pointer group active:scale-[.98] active:duration-75 hover:scale-[1.02] ease-in-out transition-all"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
