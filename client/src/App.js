@@ -57,7 +57,7 @@ function App() {
               <Route path="/Home" element={<Home />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/profile" element={<Connections/>} />
-              <Route path="/signout" element={<Home />} />
+              {/* <Route path="/signout" element={<Home />} /> */}
               <Route path="/addconnections" element={<Forms />} />
               <Route path="/startups" element={<Startups />} />
               <Route path="/mentors" element={<Mentors />} />

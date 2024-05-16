@@ -1,13 +1,17 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import img from '../assets/images/nirmaan-iitm.14fdf833.svg'
 import {FaArrowAltCircleDown, FaList, FaPaperPlane, FaRegBell, FaUserCircle } from 'react-icons/fa';
+import axios from 'axios';
 function NavBar() {
+  const navigate = useNavigate();
   const currentPath = window.location.pathname;
   const showArrowIcon = currentPath === '/Home';
   const [isBellHovered, setIsBellHovered] = useState(false);
   const [profileHover, setProfileHover] = useState(false);
   const [rocketHover, setRocketHover] = useState(false);
   const [arrowHover, setArrowHover] = useState(false);
+  const [signOut, setSignOut] = useState(false);
   const handleArrowHover = () => {
     setArrowHover(true);
   }
@@ -38,6 +42,13 @@ function NavBar() {
   const styless = {
     transform: rocketHover?"rotate(-20deg)":"",
     transition: rocketHover?"ease-in-out":"",
+  }
+  const handleSignOut = () => {
+      const token = localStorage.removeItem('token');
+      if(!token)
+      {
+        navigate('/')
+      }
   }
   return (
     <div className="navbar">
@@ -88,8 +99,7 @@ function NavBar() {
                           <div className="absolute top-[33px;] right-0 mt-2 w-30 bg-slate-100 border border-gray-200 rounded-lg shadow-md items-center">
                               <a href="/profile" className="block py-2 px-4 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Profile</a>
                               <a href="/settings" className="block py-2 px-4 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Settings</a>
-                              <a href="/signout" className="block py-2 px-4 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">SignOut</a>
-
+                              <button onClick={handleSignOut} className="block py-2 px-4 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">SignOut</button>
                           </div>
                       )}</div>
                   </li>
