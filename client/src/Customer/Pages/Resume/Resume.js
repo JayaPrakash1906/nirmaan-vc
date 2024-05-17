@@ -14,7 +14,13 @@ function Resume() {
   const ApprovalButtonRenderer = ({ value, data }) => {
     const handleApprovalClick = async() => {
       try{
-        const response = await axios.post('http://localhost:3001/api/v1/resume/resume-send', data)
+        // const token  = req.header
+        const response = await axios.post('http://localhost:3001/api/v1/resume/resume-send', data, {headers: {
+              'Content-Type': 'application/json',
+              'Authorization': localStorage.getItem('token')
+            }
+          }
+        )
         if(response.status===200)
         {
             alertify.success("Email Sent")

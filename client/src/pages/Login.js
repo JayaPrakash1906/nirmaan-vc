@@ -42,9 +42,11 @@ function Login() {
             else
             {
                 const accessToken = response.data.result.accessToken;
-                console.log(accessToken);
+                // console.log(jwtDecode(accessToken))
+                const data = response.data.result.role;
                 localStorage.setItem('token', accessToken);
                 let x = localStorage.getItem('token');
+                sessionStorage.setItem('role', data);
                 setError('')
                 if(!x)
                 {
@@ -75,9 +77,7 @@ function Login() {
                         {
                             alertify.error("Unknown Error");
                         }
-
-                }
-                        
+                }          
             }
         }
         catch(error)

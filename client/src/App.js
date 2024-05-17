@@ -55,7 +55,7 @@ function App() {
       <BrowserRouter>
         <Routes>
            <Route path="/" element={<Login />} />  
-            <Route element={<ProtectedRoutes/>}>
+            <Route element={<ProtectedRoutes requiredRoles={[localStorage.getItem('token'), '2']} />}>
                   <Route path="/Home" element={<Home />} />
                   <Route path="/connections" element={<Connections />} />
                   <Route path="/profile" element={<Connections/>} />
@@ -70,12 +70,14 @@ function App() {
                   <Route path="/contacts" element={<Contacts/>} /> 
                   <Route path="/mentor/new" element={<AddNewMentor />} />
                   <Route path="/reports" element={<Reports />} />
+                  <Route path="/uploads" element={<UploadFile />} />
+                  <Route path="/view/uploads" element={<ViewComponents/> }/>
+             </Route>
+             <Route  element={<ProtectedRoutes requiredRoles={[localStorage.getItem('token'), '5']} />} >
                   <Route path="/events/request-speaker" element={<RequestSpeaker/>} />  
                   <Route path="/customer/Home" element={< CustomerHome/>}  />
                   <Route path="/customer/resume" element={<Resume />} />
-                  <Route path="/uploads" element={<UploadFile />} />
-                  <Route path="/view/uploads" element={<ViewComponents/> }/>
-            </Route>
+             </Route>
                             {/* <Route path="/signout" element={<Home />} /> */}
 
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}

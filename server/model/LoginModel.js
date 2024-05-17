@@ -18,6 +18,7 @@ const LoginModel = (user_mail, user_password) => {
                 {
                     let role = result.rows[0].user_role;
                     let department = result.rows[0].user_department;
+                    let token_data = role + '' + user_mail
                     const accessToken = jwt.sign(user_mail, process.env.ACCESS_TOKEN_SECRET);
                     resolve({ accessToken: accessToken, id: user_mail, role: role, department: department, status: 'Login Authenticated'});
                     if(result.rows[0].user_role === 2)
