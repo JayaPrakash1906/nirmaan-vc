@@ -1,4 +1,6 @@
 const nodemailer = require("nodemailer");
+const path = require('path');  
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 const ApprovalRequest = async(req, res) => {
     const {college_data, college_department, resume_url, resume_year, resume_name} = req.body;
     const transporter = nodemailer.createTransport({
@@ -14,7 +16,7 @@ const ApprovalRequest = async(req, res) => {
     {
         const info = await transporter.sendMail({
             from: '"Prasath" prasathnarayanan6@gmail.com',
-            to: "prasathnarayanan6@gmail.com, jayaprakashtrk8@gmail.com",
+            to: "prasathnarayanan6@gmail.com",
             subject: "TRAKTOR - Approval Request for Resume" + resume_name, 
             text: "Dear mam, Please approve for the following resume for internship " + resume_url, 
             // html: "<b>Thank You!</b>", 
