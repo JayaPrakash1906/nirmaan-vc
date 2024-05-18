@@ -22,6 +22,8 @@ import View from './pages/UploadFile/View';
 import ViewComponents from './pages/UploadFile/ViewComponents';
 // import Todo from '../src/__test__/todo'
 import ProtectedRoutes from './utils/ProtectedRoutes';
+import Cms from './pages/cms/Cms.js';
+import Profile from './pages/profile/Profile.js';
 function App() {
   const [LoggedIn, setLoggedIn] = useState(false);
   const authenticate = async() => {
@@ -58,7 +60,7 @@ function App() {
             <Route element={<ProtectedRoutes requiredRoles={[localStorage.getItem('token'), '2']} />}>
                   <Route path="/Home" element={<Home />} />
                   <Route path="/connections" element={<Connections />} />
-                  <Route path="/profile" element={<Connections/>} />
+                  <Route path="/profile" element={<Profile/>} />
                   <Route path="/addconnections" element={<Forms />} />
                   <Route path="/startups" element={<Startups />} />
                   <Route path="/mentors" element={<Mentors />} />
@@ -72,15 +74,13 @@ function App() {
                   <Route path="/reports" element={<Reports />} />
                   <Route path="/uploads" element={<UploadFile />} />
                   <Route path="/view/uploads" element={<ViewComponents/> }/>
+                  <Route path="/cms" element={<Cms />} />
              </Route>
              <Route  element={<ProtectedRoutes requiredRoles={[localStorage.getItem('token'), '5']} />} >
                   <Route path="/events/request-speaker" element={<RequestSpeaker/>} />  
                   <Route path="/customer/Home" element={< CustomerHome/>}  />
                   <Route path="/customer/resume" element={<Resume />} />
              </Route>
-                            {/* <Route path="/signout" element={<Home />} /> */}
-
-          {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

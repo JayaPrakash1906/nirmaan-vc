@@ -14,5 +14,5 @@ router.get('/download/:filename', ResumeController);
 router.get('/getdata', GetAllResumeController);
 router.post('/resumeupload', ResumeUpload );
 router.get('/resume-fetch/:page_data/:page_number', Resumedata)
-router.post('/resume-send', Authenticate, ApprovalRequest)
+router.post('/resume-send', ApprovalRequest)
 module.exports = router;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import img from '../assets/images/nirmaan-iitm.14fdf833.svg'
 import {FaArrowAltCircleDown, FaList, FaPaperPlane, FaRegBell, FaUserCircle } from 'react-icons/fa';
@@ -49,6 +49,19 @@ function NavBar() {
       {
         navigate('/')
       }
+  }
+  const handleApprovedResume = () =>{
+    const result = axios.post('http://localhost:3000/api/v1/approved-resume')
+    result.status(200)
+  }
+  // useEffect(()=>{
+  //   setInterval(()=>{
+  //     handleApprovedResume();
+  //   }, 2000)
+  // },[])
+
+  const ProfileView = () => {
+      const result = axios.get('http://localhost:3000/api/v1/profile-data')
   }
   return (
     <div className="navbar">
