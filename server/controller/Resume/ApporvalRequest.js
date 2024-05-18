@@ -9,7 +9,7 @@ const ApprovalRequest = async(req, res) => {
         secure: false,
         auth: {
             user: "prasathnarayanan6@gmail.com",
-            pass: "jons wyxl rwcc ttux"
+            pass: process.env.PASS_KEY
         },
     });
     try
