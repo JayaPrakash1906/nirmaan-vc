@@ -30,7 +30,7 @@ function UploadFile(){
         }
         try
         {
-            const response = await axios.post(APP_URL+'/resumeupload', formdata)
+            const response = await axios.post(APP_URL+'resumeupload', formdata)
             //console.log(response);
             if(response.status == 200)
             {

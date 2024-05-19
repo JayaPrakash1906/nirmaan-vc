@@ -67,7 +67,7 @@ function ViewComponents() {
   ];
 
   useEffect(() => {
-    fetch(APP_URL+'/resume/resume-fetch/14/1')
+    fetch(APP_URL+'resume/resume-fetch/14/1')
       .then(response => response.json())
       .then(fetchedData => setData(fetchedData));
   }, []);
