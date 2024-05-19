@@ -7,7 +7,7 @@ import NavBar from '../../components/NavBar';
 import 'lity/dist/lity.css';
 import lity from 'lity';
 import { FaCheckCircle, FaEye, FaTrash } from 'react-icons/fa';
-
+import APP_URL from '../../Config';
 function ViewComponents() {
   const [data, setData] = useState([]);
   const ApprovalButtonRenderer = ({ value, onClick }) => {
@@ -47,9 +47,6 @@ function ViewComponents() {
       </div>
     );
   };
-  const sendMail = ({}) => {
-    const result = fetch.post("http://localhost:3001/api/v1/send-mail", )
-  }
   const columnDefs = [
     { field: 'resume_name', headerName: 'Full Name' },
     { field: 'resume_email', headerName: 'Email' },
@@ -70,7 +67,7 @@ function ViewComponents() {
   ];
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/v1/resume/resume-fetch/14/1')
+    fetch(APP_URL+'/resume/resume-fetch/14/1')
       .then(response => response.json())
       .then(fetchedData => setData(fetchedData));
   }, []);

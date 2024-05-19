@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar";
 import axios from "axios";
 import alertify from 'alertifyjs';
 import { FaEye } from "react-icons/fa";
+import APP_URL from "../../Config";
 function UploadFile(){
     const[formdata, setFormData] = useState({
         name:'',
@@ -29,7 +30,7 @@ function UploadFile(){
         }
         try
         {
-            const response = await axios.post('http://localhost:3001/api/v1/resumeupload', formdata)
+            const response = await axios.post(APP_URL+'/resumeupload', formdata)
             //console.log(response);
             if(response.status == 200)
             {

@@ -9,7 +9,7 @@ import 'alertifyjs/build/css/alertify.css';
 import {FaGoogle } from 'react-icons/fa';
 import { jwtDecode } from "jwt-decode";
 import PuffLoader from "react-spinners/PuffLoader";
-
+import APP_URL from '../Config';
 function Login() {  
     const navigate = useNavigate();
     const [error, setError] = useState('')
@@ -34,7 +34,7 @@ function Login() {
           }, 4000);
         try
         {
-            const response = await axios.post('http://localhost:3001/api/v1/login', formData);
+            const response = await axios.post(APP_URL+'/login', formData);
             if(!formData)
             {
                 alertify.error('All fields are required to login');

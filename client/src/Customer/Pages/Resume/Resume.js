@@ -8,13 +8,14 @@ import 'lity/dist/lity.css';
 import lity from 'lity';
 import axios from 'axios'
 import alertify from 'alertifyjs';
+import APP_URL from '../../../Config';
 import { FaCheckCircle, FaEye, FaTrash } from 'react-icons/fa';
 function Resume() {
   const [data, setData] = useState([]);
   const ApprovalButtonRenderer = ({ value, data }) => {
     const handleApprovalClick = async() => {
       try{
-          const response = await axios.post('http://localhost:3001/api/v1/resume/resume-send', data)
+          const response = await axios.post(APP_URL+'/resume/resume-send', data)
         if(response.status===200)
         {
             alertify.success("Email Sent")
@@ -78,7 +79,7 @@ function Resume() {
   ];
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/v1/resume/resume-fetch/14/1')
+    fetch(APP_URL+'/resume-fetch/14/1')
       .then(response => response.json())
       .then(fetchedData => setData(fetchedData));
   }, []);
