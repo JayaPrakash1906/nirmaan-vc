@@ -15,7 +15,7 @@ function Resume() {
   const ApprovalButtonRenderer = ({ value, data }) => {
     const handleApprovalClick = async() => {
       try{
-          const response = await axios.post(APP_URL+'/resume/resume-send', data)
+          const response = await axios.post(APP_URL+'resume/resume-send', data)
         if(response.status===200)
         {
             alertify.success("Email Sent")
@@ -79,7 +79,7 @@ function Resume() {
   ];
 
   useEffect(() => {
-    fetch(APP_URL+'/resume-fetch/14/1')
+    fetch(APP_URL+'resume-fetch/14/1')
       .then(response => response.json())
       .then(fetchedData => setData(fetchedData));
   }, []);
