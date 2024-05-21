@@ -35,35 +35,34 @@ function Login() {
         }
     }
     const handleForgotPassword = () => {
-        alertify.prompt('Email:')
+        alertify.prompt('Email:', '')
             .set({
                 'onshow': function() {
-                    this.setContent('<input type="email" id="email_prompt" name="email_prompt" style="width: 100%">');
+                    this.setContent('<input type="email" id="email_prompt" name="email_prompt" style="width: 100%;">');
                 },
                 'title': 'Forgot Password',
-                'type': 'email',
+                'type': 'text',
                 'size': 'large',
                 'width': '100%',
-                'onok': function(event, value){
+                'onok': async function(event, value){
                     var data = document.getElementById('email_prompt').value;
-                    var email = value.trim();
-                    console.log(email)
-                    // console.log(data);
+                    var datajson = {'email_prompt': data};
                     try
                     {
-                        const response  = axios.post(APP_URL+'forgot-password', data);
-                        console.log(response.result);
-                        // if(result.data.Email_status === "exists")
-                        // {
-                        //     alertify.success('Email sent!');
-                        // }
-                        // else if(result.data.Email_status === "Email does not exist! please provide valid email address")
-                        // {
-                        //     alertify.warning('Email does not exist')
-                        // }
-                        // else{
-                        //     alertify.error("fields required");
-                        // }
+                        const response  = await axios.post(APP_URL + 'forgot-password', datajson);
+                        //console.log(response.data);
+                        if(response.data.Email_status === "exists")
+                        {
+                            alertify.success('Email sent!');
+                        }
+                        else if(response.data.Email_status === "Email does not exist! please provide valid email address")
+                        {
+                            alertify.warning("Email doesn't exist");
+                        }
+                        else
+                        {
+                            alertify.warning("Unexpected response");
+                        }
                     }
                     catch(err)
                     {
@@ -71,10 +70,11 @@ function Login() {
                     }
                 },
                 'oncancel': function(){
-                    alertify.warning('Hope you remember it😁!')
+                    alertify.warning('Hope you remember it😁!');
                 }
-            });
+            }).show();
     }
+    
     const [loading, setLoading] = useState(false); 
     const handleChange = (e) => {
         const {name, value} = e.target;
