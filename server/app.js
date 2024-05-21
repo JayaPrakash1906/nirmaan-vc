@@ -7,6 +7,7 @@ const ResumeUpload = require('./routes/route');
 const Resumedata = require('./routes/route');
 const ApporvalRequest = require('./routes/route');
 const ForgotRequest = require('./routes/route');
+const Profile = require('./routes/route');
 const bodyParser = require('body-parser');
 const Authenticate = require('./utils/Authenticate');
 const cors = require('cors');
@@ -19,9 +20,10 @@ app.listen('3003', (err)=> {
 })
 app.use('/api/v1/', LoginController);
 app.use('api/v1/', ForgotRequest)
-app.get('/profile', Authenticate, (req, res) => {
-    res.send('working');
-})
+// app.get('/profile', Authenticate, (req, res) => {
+//     res.send('working');
+// })
+app.use('api/v1/', Profile);
 app.use('/api/v1/work', WorkRequestController);
 app.use('/api/v1/resume', ResumeController);
 app.use('api/v1/resume',GetAllResumeController);

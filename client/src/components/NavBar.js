@@ -65,7 +65,7 @@ function NavBar() {
   }
   return (
     <div className="navbar">
-          <nav className="bg-gray-100 border-gray-200 dark:bg-gray-900 shadow-lg">
+          <nav className="bg-gray-100 border-gray-200 dark:bg-gray-900 shadow-sm">
             <div className="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto p-2">
               <a href="https://github.com/prasathnarayanan6/nirmaan-vc-app" className="flex items-center space-x-3 rtl:space-x-reverse">
                   <img src={img} className="h-10" alt="Flowbite Logo" />

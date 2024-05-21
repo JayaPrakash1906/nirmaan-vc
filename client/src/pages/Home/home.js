@@ -18,7 +18,7 @@ function Home() {
                                                 <FaRegBuilding  size="35" className="text-slate-400 hover:text-green-400"/>
                                             </div>
                                         <div className="mx-4">
-                                            <h4 className="text-2xl font-bold text-white">159</h4>
+                                            <h4 className="text-2xl font-bold text-white">158</h4>
                                             <div className="text-slate-400 font-semibold">Total Startups</div>
                                         </div>
                                     </div>
@@ -29,7 +29,7 @@ function Home() {
                                             <FaBookOpen  size="35" className="text-slate-400 hover:text-green-400"/>
                                         </div>
                                         <div className="mx-4">
-                                            <h4 className="text-2xl font-bold text-white">23</h4>
+                                            <h4 className="text-2xl font-bold text-white">101</h4>
                                             <div className="text-slate-400 font-semibold">Active Startups</div>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@ function Home() {
                                             <FaGraduationCap  size="35" className="text-slate-400 hover:text-green-400"/>
                                         </div>
                                         <div className="mx-4">
-                                            <h4 className="text-2xl font-bold text-white">24</h4>
+                                            <h4 className="text-2xl font-bold text-white">26</h4>
                                             <div className="text-slate-400 font-semibold">Graduated</div>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@ function Home() {
                                             <FaBookOpen  size="35" className="text-slate-400 hover:text-green-400"/>
                                         </div>
                                         <div className="mx-4">
-                                            <h4 className="text-2xl font-bold text-white">10</h4>
+                                            <h4 className="text-2xl font-bold text-white">31</h4>
                                             <div className="text-slate-400 font-semibold">Dropped Out</div>
                                         </div>
                                     </div>
