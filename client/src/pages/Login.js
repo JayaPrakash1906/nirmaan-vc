@@ -92,7 +92,7 @@ function Login() {
         try
         {
             const response = await axios.post(APP_URL+'/login', formData);
-            if(!formData)
+            if(response.data.authentication === "Please enter username and password properly!")
             {
                 alertify.error('All fields are required to login');
             }
