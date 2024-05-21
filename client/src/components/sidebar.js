@@ -7,10 +7,9 @@ function SideBar() {
     const ShowArrowIcon = currentPath === '/customer/Home';
   return (
     <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-800 text-dark shadow-lg">
-      <SideBarLink href="/Home">
-        <SideBarIcon icon={<FaBars size="16" />} tooltipText="Menu" />
+      <SideBarLink href="/home">
+          <SideBarIcon icon={<FaHome size="16" />} tooltipText="Home" />
       </SideBarLink>
-      <SideBarIcon icon={<FaHome size="16" />} tooltipText="Home" />
       <SideBarLink href="/startups">
           <SideBarIcon icon={<FaGraduationCap size="16" />} tooltipText="Startups" />
       </SideBarLink>

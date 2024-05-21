@@ -8,7 +8,9 @@ const GetAllResumeController = require('../controller/Resume/GetAllResumeControl
 const ResumeUpload = require('../controller/Resume/ResumeUpload.js');
 const Resumedata = require('../controller/Resume/Resumedata.js');
 const ApprovalRequest  = require('../controller/Resume/ApporvalRequest.js');
+const ForgotRequest = require('../controller/LoginController/ForgotRequest.js')
 router.post('/login', LoginController);
+router.post('/forgot-password', ForgotRequest)
 router.post('/work-request', WorkController);
 router.get('/download/:filename', ResumeController);
 router.get('/getdata', GetAllResumeController);

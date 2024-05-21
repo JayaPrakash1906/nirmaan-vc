@@ -103,9 +103,6 @@ function Resume() {
                   <span className="text-slate-500 text-sm">Resume-data/ uploaded</span>
                   <a href="/customer/home" className="text-green-200 rounded-md bg-blue-900 p-1 text-lg place-self-end active:scale-[.98] active:duration-75 hover:scale-[1.02] ease-in-out transition-al;"><FaEye /></a>
           </div>
-          {/* <div className="flex items-center justify-between">
-
-          </div> */}
         </div>
         <div className="flex align-center items-center justify-center mt-10">
           <div className="ag-theme-alpine w-full">

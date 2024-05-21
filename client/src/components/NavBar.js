@@ -6,7 +6,7 @@ import axios from 'axios';
 function NavBar() {
   const navigate = useNavigate();
   const currentPath = window.location.pathname;
-  const showArrowIcon = currentPath === '/Home';
+  const showArrowIcon = currentPath === '/home';
   const [isBellHovered, setIsBellHovered] = useState(false);
   const [profileHover, setProfileHover] = useState(false);
   const [rocketHover, setRocketHover] = useState(false);
@@ -85,17 +85,17 @@ function NavBar() {
                         <FaArrowAltCircleDown/> <span class="sr-only">Scroll</span>
                         {arrowHover && (
                           <div className="absolute top-[35px;] right-[220px;] mt-2 w-30 bg-slate-100 border border-gray-200 rounded-lg shadow-md items-center">
-                              <a href="/Home?tab=teams" className="block py-1 px-6 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Teams</a>
-                              <a href="/Home?tab=startups" className="block py-1 px-6 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Startups</a>
-                              <a href="/Home?tab=mentors" className="block py-1 px-6 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Mentors</a>
-                              <a href="/Home?tab=funding" className="block py-1 px-6 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Funding</a>
+                              <a href="/home?tab=teams" className="block py-1 px-6 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Teams</a>
+                              <a href="/home?tab=startups" className="block py-1 px-6 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Startups</a>
+                              <a href="/home?tab=mentors" className="block py-1 px-6 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Mentors</a>
+                              <a href="/home?tab=funding" className="block py-1 px-6 text-gray-700 hover:bg-gray-400 text-sm hover:text-green-700 hover:rounded-lg">Funding</a>
                           </div>
                       )}
                      </a>
                   </li>
                   }
                   <li>
-                     <a href="/Home"   className="block py-2 px-2 text-white bg-blue-700 rounded md:bg-transparent md:text-gray-500 md:p-1 dark:text-white md:dark:text-blue-500 text-xl hover:text-white hover:bg-green-400 rounded-3xl hover:rounded-2xl transition-all duration-200 ease-linear cursor-pointer group;" onMouseEnter={handleBellHover} onMouseLeave={handleBellHover}>
+                     <a href="/home"   className="block py-2 px-2 text-white bg-blue-700 rounded md:bg-transparent md:text-gray-500 md:p-1 dark:text-white md:dark:text-blue-500 text-xl hover:text-white hover:bg-green-400 rounded-3xl hover:rounded-2xl transition-all duration-200 ease-linear cursor-pointer group;" onMouseEnter={handleBellHover} onMouseLeave={handleBellHover}>
                         <FaRegBell style={styles}  /> <span class="sr-only">Notifications</span>
                         <div class="absolute inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full top-3 end-[188px;] dark:border-gray-900 animate-pulse"><span className="text-xs"></span></div>
                      </a>

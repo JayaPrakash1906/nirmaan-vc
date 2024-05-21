@@ -58,7 +58,7 @@ function App() {
         <Routes>
            <Route path="/" element={<Login />} />  
             <Route element={<ProtectedRoutes requiredRoles={[localStorage.getItem('token'), '2']} />}>
-                  <Route path="/Home" element={<Home />} />
+                  <Route path="/home" element={<Home />} />
                   <Route path="/connections" element={<Connections />} />
                   <Route path="/profile" element={<Profile/>} />
                   <Route path="/addconnections" element={<Forms />} />

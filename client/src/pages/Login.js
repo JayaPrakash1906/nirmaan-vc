@@ -6,18 +6,75 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import alertify from 'alertifyjs';
 import 'alertifyjs/build/css/alertify.css';
-import {FaGoogle } from 'react-icons/fa';
 import { jwtDecode } from "jwt-decode";
 import PuffLoader from "react-spinners/PuffLoader";
 import APP_URL from '../Config';
+import {Icon} from 'react-icons-kit';
+import {eyeOff} from 'react-icons-kit/feather/eyeOff';
+import {eye} from 'react-icons-kit/feather/eye'
 function Login() {  
     const navigate = useNavigate();
     const [error, setError] = useState('')
-    const [viewPass, setViewPass] = useState(''); 
     const [formData, setFormData] = useState({
         user_mail: '',
         user_password: ''
     }) 
+    const[viewPassword, setViewPassword] = useState(false);
+    const[icon, setIcon] = useState(eyeOff);
+    const[type, setType] = useState('password');
+    const handleToggle = () => {
+        if(type==='password')
+        {
+            setIcon(eye);
+            setType('text');
+        }
+        else 
+        {
+            setIcon(eyeOff)
+            setType('password')
+        }
+    }
+    const handleForgotPassword = () => {
+        alertify.prompt('Email:')
+            .set({
+                'onshow': function() {
+                    this.setContent('<input type="email" id="email_prompt" name="email_prompt" style="width: 100%">');
+                },
+                'title': 'Forgot Password',
+                'type': 'email',
+                'size': 'large',
+                'width': '100%',
+                'onok': function(event, value){
+                    var data = document.getElementById('email_prompt').value;
+                    var email = value.trim();
+                    console.log(email)
+                    // console.log(data);
+                    try
+                    {
+                        const response  = axios.post(APP_URL+'forgot-password', data);
+                        console.log(response.result);
+                        // if(result.data.Email_status === "exists")
+                        // {
+                        //     alertify.success('Email sent!');
+                        // }
+                        // else if(result.data.Email_status === "Email does not exist! please provide valid email address")
+                        // {
+                        //     alertify.warning('Email does not exist')
+                        // }
+                        // else{
+                        //     alertify.error("fields required");
+                        // }
+                    }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
+                },
+                'oncancel': function(){
+                    alertify.warning('Hope you remember it😁!')
+                }
+            });
+    }
     const [loading, setLoading] = useState(false); 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -62,7 +119,7 @@ function Login() {
                             }
                             else if(response.data.result.role === 2)
                             {
-                                navigate('/Home');
+                                navigate('/home');
                             }
                             else
                             {
@@ -106,11 +163,14 @@ function Login() {
                                     <input name="user_password" value={formData.user_password} onChange={handleChange}
                                         className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent hover:border-green-300"
                                         placeholder="Password"
-                                        type="password"
+                                        type={type}
                                     />
+                                    <span class="flex justify-end items-end text-green-400" onClick={handleToggle}>
+                                        <Icon class="absolute mr-3 mb-4" icon={icon} size={25}/>
+                                    </span>
                                 </div>
-                                <div className="mt-8 flex justify-between items-center">
-                                    <button className="text-green-500">Forgot Password</button>
+                                <div className="mt-8 flex justify-between items-center" >
+                                    <a className="text-green-500" onClick={handleForgotPassword}>Forgot Password</a>
                                 </div>
                                 <div className='mt-3 flex flex-col gap-y-4'>
                                     <button className="active:scale-[.98] active:duration-75 hover:scale-[1.02] ease-in-out transition-all py-3 rounded-l bg-green-500 text-white text-lg font-bold flex items-center justify-center">{loading ? (<PuffLoader size={28} color="gold" ariaLabel="Loading"/>):('Log in')}</button>
