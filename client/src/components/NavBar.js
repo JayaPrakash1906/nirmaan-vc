@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import img from '../assets/images/nirmaan-iitm.14fdf833.svg'
 import {FaArrowAltCircleDown, FaList, FaPaperPlane, FaRegBell, FaUserCircle } from 'react-icons/fa';
 import axios from 'axios';
+import APP_URL from '../Config';
 function NavBar() {
   const navigate = useNavigate();
   const currentPath = window.location.pathname;
@@ -51,7 +52,7 @@ function NavBar() {
       }
   }
   const handleApprovedResume = () =>{
-    const result = axios.post('http://localhost:3000/api/v1/approved-resume')
+    const result = axios.post(APP_URL+'approved-resume')
     result.status(200)
   }
   // useEffect(()=>{
@@ -61,7 +62,8 @@ function NavBar() {
   // },[])
 
   const ProfileView = () => {
-      const result = axios.get('http://localhost:3000/api/v1/profile-data')
+      const result = axios.get(APP_URL+'profile');
+      console.log(result.data);
   }
   return (
     <div className="navbar">

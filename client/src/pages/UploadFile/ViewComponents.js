@@ -6,19 +6,31 @@ import SideBar from '../../components/sidebar';
 import NavBar from '../../components/NavBar';
 import 'lity/dist/lity.css';
 import lity from 'lity';
-import { FaCheckCircle, FaEye, FaTrash } from 'react-icons/fa';
+import { FaAngleRight, FaCheckCircle, FaEye, FaTrash } from 'react-icons/fa';
 import APP_URL from '../../Config';
+import alertify from 'alertifyjs';
 function ViewComponents() {
   const [data, setData] = useState([]);
-  const ApprovalButtonRenderer = ({ value, onClick }) => {
-    const handleApprovalClick = () => {
-      console.log("Approval button clicked for", value);
-      onClick(value); 
-    };
-
-    const handleNewButtonClick = () => {
-      console.log("New button clicked for", value);
-      // Custom logic for the new button
+  const ApprovalButtonRenderer = ({ value, data }) => {
+    const handleNewButtonClick = async() => {
+      try
+      {
+        const deleteTodo = await fetch(APP_URL+`resume/delete-resume/${data.resume_email}`,{
+          method: "DELETE",
+        });
+        if(deleteTodo)
+        {
+          alertify.success("Message deleted successfully");
+        }
+        else 
+        {
+          alertify.error("Error has been occured");
+        }
+      }
+      catch(err)
+      {
+          console.log(err)
+      }
     };
 
     return (
@@ -67,6 +79,7 @@ function ViewComponents() {
   ];
 
   useEffect(() => {
+    // ApprovalButtonRenderer();
     fetch(APP_URL+'resume/resume-fetch/14/1')
       .then(response => response.json())
       .then(fetchedData => setData(fetchedData));
@@ -84,31 +97,28 @@ function ViewComponents() {
                   <span className="text-slate-500 text-sm">Resume-data/ uploaded</span>
                   <a href="/uploads" className="text-green-200 rounded-md bg-blue-900 p-1 text-lg place-self-end active:scale-[.98] active:duration-75 hover:scale-[1.02] ease-in-out transition-al;"><FaEye /></a>
           </div>
-          {/* <div className="flex items-center justify-between">
-
-          </div> */}
         </div>
-        <div className="flex align-center items-center justify-center mt-10">
-          <div className="ag-theme-alpine w-full">
-            <AgGridReact
-              rowData={data}
-              columnDefs={columnDefs}
-              domLayout='autoHeight'
-              headerBackgroundColor="#AED76Z"
-              rowHeight={40}
-              suppressHorizontalScroll={true}
-              enableColResize={true}
-              paginationPageSize = {10}
-              paginationPageSizeSelector = {[10,20,30]}
-              suppressScrollOnNewData={true}
-              pagination={true}
-              frameworkComponents={{
-                ResumeButtonRenderer: ResumeButtonRenderer,
-                ApprovalButtonRenderer: ApprovalButtonRenderer,
-              }}
-            />
-          </div>
-        </div>
+            <div className="flex align-center items-center justify-center mt-10">
+              <div className="ag-theme-alpine w-[90%;]">
+                <AgGridReact
+                  rowData={data}
+                  columnDefs={columnDefs}
+                  domLayout='autoHeight'
+                  headerBackgroundColor="#AED76Z"
+                  rowHeight={50}
+                  suppressHorizontalScroll={true}
+                  enableColResize={true}
+                  paginationPageSize = {5}
+                  paginationPageSizeSelector = {[5,10,20,30]}
+                  suppressScrollOnNewData={true}
+                  pagination={true}
+                  frameworkComponents={{
+                    ResumeButtonRenderer: ResumeButtonRenderer,
+                    ApprovalButtonRenderer: ApprovalButtonRenderer,
+                  }}
+                />
+              </div>
+            </div>
       </section>
     </div>
   );

@@ -8,6 +8,7 @@ const Resumedata = require('./routes/route');
 const ApporvalRequest = require('./routes/route');
 const ForgotRequest = require('./routes/route');
 const Profile = require('./routes/route');
+const DeleteResume = require('./routes/route');
 const bodyParser = require('body-parser');
 const Authenticate = require('./utils/Authenticate');
 const cors = require('cors');
@@ -30,3 +31,4 @@ app.use('api/v1/resume',GetAllResumeController);
 app.use('api/v1/resume',  ResumeUpload);
 app.use('api/v1/resume', Resumedata);
 app.use('api/v1/resume', ApporvalRequest)
+app.use('api/v1/resume', DeleteResume)
