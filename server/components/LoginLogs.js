@@ -17,7 +17,7 @@ const LoginLogs = (email, user_role, time, sessionId) => {
                         {
                             console.log('bug')
                         }
-                    }
+                    }   
             }
         )
         })

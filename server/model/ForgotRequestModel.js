@@ -1,6 +1,7 @@
 const client = require('../utils/conn');
 const nodemailer = require('nodemailer');
-const ForgotRequestModel = async(email_prompt) => {
+const ForgotPasswordEmailer = require("../components/ForgotPasswordEmailer");
+const ForgotRequestModel = (email_prompt) => {
     return new Promise((resolve, reject)=>{
         client.query('SELECT user_mail FROM user_data WHERE user_mail=$1', [email_prompt], (err, result)=>{
             if(err)
@@ -11,7 +12,17 @@ const ForgotRequestModel = async(email_prompt) => {
             {
                 if(result.rows.length > 0)
                 {
-                    resolve({Email_status: "exists"})
+                    try
+                    {
+                       const emailData = ForgotPasswordEmailer(email_prompt);
+                       resolve(emailData);
+
+                    }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
+
                 }
                 else
                 {

@@ -17,7 +17,7 @@ const LoginController = async (req, res) => {
     }
     else 
     {
-		res.status(200).json({authentication: 'Please enter username and password properly!'})
+		res.status(401).json({authentication: 'Please enter username and password properly!'})
 	}
 }
 
