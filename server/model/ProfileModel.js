@@ -15,7 +15,7 @@ const ProfileModel = async(mail) => {
                 }
                 else
                 {
-                    return "not found";
+                    resolve({data : "Not found"});
                 }
             }
         })
