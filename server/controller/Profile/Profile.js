@@ -1,15 +1,15 @@
-const LoginLogs = require("../../components/LoginLogs");
-
+const ProfileModel = require('../../model/ProfileModel');
 const Profile = async(req, res) => {
         try
         {
-            const{email, user_role, time, sessionId} = req.body;
-            // const result = await LoginLogs(email, user_role, time, sessionId);
+            const{mail} = req.params;
+            //res.send(mail);
+            const result = await ProfileModel(mail);
             res.send(result);
         } 
         catch(err)
         {
-            throw err;
+            res.send(err);
         }   
 }
 module.exports = Profile;

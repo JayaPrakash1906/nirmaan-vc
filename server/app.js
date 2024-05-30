@@ -34,6 +34,7 @@ app.use('api/v1/resume', Resumedata);
 app.use('api/v1/resume', ApporvalRequest);
 app.use('api/v1/resume', DeleteResume);
 app.use('api/v1/', AddMentor);
+app.use('api/v1/',Profile)
 module.exports = app;
 
 

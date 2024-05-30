@@ -23,4 +23,5 @@ router.post('/resume-send', ApprovalRequest);
 router.post('/profile', Profile);
 router.delete('/delete-resume/:id', DeleteResume);
 router.post('/mentor/add', AddMentor);
+router.get('/profile-Data/:mail', Profile)
 module.exports = router;
