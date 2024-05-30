@@ -12,6 +12,7 @@ const ForgotRequest = require('../controller/LoginController/ForgotRequest.js');
 const Profile = require('../controller/Profile/Profile.js');
 const DeleteResume = require('../controller/Resume/DeleteResume.js');
 const AddMentor = require('../controller/Mentors/AddMentor.js');
+const Settings = require('../controller/Settings/Settings.js');
 router.post('/login', LoginController);
 router.post('/forgot-password', ForgotRequest)
 router.post('/work-request', WorkController);
@@ -23,5 +24,6 @@ router.post('/resume-send', ApprovalRequest);
 router.post('/profile', Profile);
 router.delete('/delete-resume/:id', DeleteResume);
 router.post('/mentor/add', AddMentor);
-router.get('/profile-Data/:mail', Profile)
+router.get('/profile-Data/:mail', Profile);
+router.post('/add-sector', Settings)
 module.exports = router;

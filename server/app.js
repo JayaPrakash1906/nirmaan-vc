@@ -11,6 +11,7 @@ const Profile = require('./routes/route');
 const DeleteResume = require('./routes/route');
 const AddMentor = require('./routes/route');
 const bodyParser = require('body-parser');
+const Settings = require('./routes/route')
 const Authenticate = require('./utils/Authenticate');
 const cors = require('cors');
 const app = express();
@@ -34,7 +35,8 @@ app.use('api/v1/resume', Resumedata);
 app.use('api/v1/resume', ApporvalRequest);
 app.use('api/v1/resume', DeleteResume);
 app.use('api/v1/', AddMentor);
-app.use('api/v1/',Profile)
+app.use('api/v1/',Profile);
+app.use('api/v1/', Settings);
 module.exports = app;
 
 
