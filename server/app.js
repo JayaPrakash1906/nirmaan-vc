@@ -13,6 +13,8 @@ const AddMentor = require('./routes/route');
 const bodyParser = require('body-parser');
 const Settings = require('./routes/route')
 const AddMessage = require('./routes/route');
+const ViewMessage = require('./routes/route');
+const EstablishConnection = require('./routes/route');
 const Authenticate = require('./utils/Authenticate');
 const cors = require('cors');
 const app = express();
@@ -39,6 +41,8 @@ app.use('api/v1/', AddMentor);
 app.use('api/v1/',Profile);
 app.use('api/v1/', Settings);
 app.use('api/v1/', AddMessage);
+app.use('api/v1/', ViewMessage);
+app.use('api/v1/', EstablishConnection);
 module.exports = app;
 
 

@@ -13,7 +13,8 @@ const Profile = require('../controller/Profile/Profile.js');
 const DeleteResume = require('../controller/Resume/DeleteResume.js');
 const AddMentor = require('../controller/Mentors/AddMentor.js');
 const Settings = require('../controller/Settings/Settings.js');
-const {AddMessage} = require('../controller/Messages/Messages.js')
+const {AddMessage, ViewMessage} = require('../controller/Messages/Messages.js');
+const {EstablishConnection} = require("../controller/Connections/Connection.js");
 router.post('/login', LoginController);
 router.post('/send-message', AddMessage);
 router.post('/forgot-password', ForgotRequest)
@@ -28,4 +29,6 @@ router.delete('/delete-resume/:id', DeleteResume);
 router.post('/mentor/add', AddMentor);
 router.get('/profile-Data/:mail', Profile);
 router.post('/add-sector', Settings)
+router.get('/view-message', ViewMessage);
+router.post('/establish-connections', EstablishConnection)
 module.exports = router;

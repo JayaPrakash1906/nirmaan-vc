@@ -20,9 +20,25 @@ const SendMessageModel = async(message_id, sender_id, message, receiver_id) => {
         })
     })
 }
-const ViewMessageModel = () => {
+const ViewMessageModel = async(sender_id) => {
     return new Promise((reject, resolve) => {
-        resolve({data: "data viewed"})
+        client.query("SELECT * FROM messages_data WHERE sender_id=$1", [sender_id], (err, result)=>{
+            if(err)
+            {
+                reject(err);
+            }
+            else
+            {
+                if(result.rows.length>0)
+                {
+                    resolve({result})
+                }   
+                else
+                {
+                    resolve({status: "Not fetched"})
+                }  
+            }
+        })
     })
 }
 module.exports = {SendMessageModel, ViewMessageModel}  
