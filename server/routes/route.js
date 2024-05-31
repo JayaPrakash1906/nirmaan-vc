@@ -13,7 +13,9 @@ const Profile = require('../controller/Profile/Profile.js');
 const DeleteResume = require('../controller/Resume/DeleteResume.js');
 const AddMentor = require('../controller/Mentors/AddMentor.js');
 const Settings = require('../controller/Settings/Settings.js');
+const {AddMessage} = require('../controller/Messages/Messages.js')
 router.post('/login', LoginController);
+router.post('/send-message', AddMessage);
 router.post('/forgot-password', ForgotRequest)
 router.post('/work-request', WorkController);
 router.get('/download/:filename', ResumeController);
