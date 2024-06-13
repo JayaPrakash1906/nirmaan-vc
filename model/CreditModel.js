@@ -41,4 +41,5 @@ const ViewCreditsModel = async(credits_mail) => {
         })
     })
 }
+
 module.exports = {AddCreditsModel, ViewCreditsModel}  

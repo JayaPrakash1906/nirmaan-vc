@@ -14,14 +14,15 @@ const bodyParser = require('body-parser');
 const Settings = require('./routes/route')
 const AddMessage = require('./routes/route');
 const ViewMessage = require('./routes/route');
-const Credits = require('./routes/route')
+const Credits = require('./routes/route');
 const EstablishConnection = require('./routes/route');
 const Authenticate = require('./utils/Authenticate');
 const cors = require('cors');
+const Founder = require('./routes/route');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.listen('3003', (err)=> {
+app.listen('3005', (err)=> {
     if(err) process.exit(1);
     console.log("working");
 })
@@ -44,7 +45,8 @@ app.use('api/v1/', Settings);
 app.use('api/v1/', AddMessage);
 app.use('api/v1/', ViewMessage);
 app.use('api/v1/', EstablishConnection);
-app.use('api/v1/',Credits)
+app.use('api/v1/',Credits);
+app.use('api/v1/',Founder);
 module.exports = app;
 
 

@@ -16,6 +16,7 @@ const Settings = require('../controller/Settings/Settings.js');
 const {AddMessage, ViewMessage} = require('../controller/Messages/Messages.js');
 const {EstablishConnection} = require("../controller/Connections/Connection.js");
 const Credits = require('../controller/startupTeam/Credits.js');
+const Founder = require('../controller/startupTeam/founder.js');
 router.post('/login', LoginController);
 router.post('/send-message', AddMessage);
 router.post('/forgot-password', ForgotRequest)
@@ -32,5 +33,6 @@ router.get('/profile-Data/:mail', Profile);
 router.post('/add-sector', Settings)
 router.get('/view-message', ViewMessage);
 router.post('/credits-apply',Credits);
+router.put('/founder-update/:mail',Founder);
 router.post('/establish-connections', EstablishConnection)
 module.exports = router;
