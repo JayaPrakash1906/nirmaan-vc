@@ -18,7 +18,7 @@ const {EstablishConnection} = require("../controller/Connections/Connection.js")
 const Credits = require('../controller/startupTeam/Credits.js');
 const Founder = require('../controller/startupTeam/founder.js');
 const Team_member = require('../controller/startupTeam/team_member.js');
-const Newaward = require('../controller/startupTeam/newawards.js');
+const newaward = require('../controller/startupTeam/newawards.js');
 router.post('/login', LoginController);
 router.post('/send-message', AddMessage);
 router.post('/forgot-password', ForgotRequest)
@@ -37,6 +37,6 @@ router.get('/view-message', ViewMessage);
 router.post('/credits-apply',Credits);
 router.put('/founder-update/:mail',Founder);
 router.put('/team_member/:mail',Team_member);
-router.post('/Add_award', Newaward);
+router.post('/Add_award', newaward);
 router.post('/establish-connections', EstablishConnection)
 module.exports = router;

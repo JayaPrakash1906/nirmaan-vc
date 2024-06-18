@@ -20,7 +20,7 @@ const Authenticate = require('./utils/Authenticate');
 const cors = require('cors');
 const Founder = require('./routes/route');
 const Team_member = require('./routes/route');
-const Newaward = require('./routes/route');
+const newaward = require('./routes/route');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -50,7 +50,7 @@ app.use('api/v1/', EstablishConnection);
 app.use('api/v1/',Credits);
 app.use('api/v1/',Founder);
 app.use('api/v1/',Team_member);
-app.use('api/v1/', Newaward);
+app.use('api/v1/', newaward);
 module.exports = app;
 
 
