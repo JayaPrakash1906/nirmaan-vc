@@ -13,14 +13,18 @@ const AddMentor = require('./routes/route');
 const bodyParser = require('body-parser');
 const Settings = require('./routes/route')
 const AddMessage = require('./routes/route');
+const jobModel = require('./routes/route');
+const AddMentorHourModel = require('./routes/route');
 const ViewMessage = require('./routes/route');
 const Credits = require('./routes/route');
 const EstablishConnection = require('./routes/route');
 const Authenticate = require('./utils/Authenticate');
 const cors = require('cors');
 const Founder = require('./routes/route');
+const About = require('./routes/route');
 const Team_member = require('./routes/route');
 const newaward = require('./routes/route');
+const PdfDocument = require('./routes/route');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -50,7 +54,10 @@ app.use('api/v1/', EstablishConnection);
 app.use('api/v1/',Credits);
 app.use('api/v1/',Founder);
 app.use('api/v1/',Team_member);
+app.use('api/v1/',PdfDocument);
 app.use('api/v1/', newaward);
+app.use('api/v1/', jobModel);
+app.use('api/v1/', AddMentorHourModel);
 module.exports = app;
 
 

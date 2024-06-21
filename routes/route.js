@@ -14,14 +14,19 @@ const DeleteResume = require('../controller/Resume/DeleteResume.js');
 const AddMentor = require('../controller/Mentors/AddMentor.js');
 const Settings = require('../controller/Settings/Settings.js');
 const {AddMessage, ViewMessage} = require('../controller/Messages/Messages.js');
+const job = require('../controller/Job/job.js');
+const AddMentorHour = require('../controller/Mentors/AddMentorHour.js')
 const {EstablishConnection} = require("../controller/Connections/Connection.js");
 const Credits = require('../controller/startupTeam/Credits.js');
 const Founder = require('../controller/startupTeam/founder.js');
+const About = require('../controller/startupTeam/about.js');
+//const PdfDocument = require('../controller/startupTeam/pdfdocument.js');
 const Team_member = require('../controller/startupTeam/team_member.js');
 const newaward = require('../controller/startupTeam/newawards.js');
 router.post('/login', LoginController);
 router.post('/send-message', AddMessage);
-router.post('/forgot-password', ForgotRequest)
+router.post('/addmentor', AddMentorHour);
+router.post('/forgot-password', ForgotRequest);
 router.post('/work-request', WorkController);
 router.get('/download/:filename', ResumeController);
 router.get('/getdata', GetAllResumeController);
@@ -34,9 +39,12 @@ router.post('/mentor/add', AddMentor);
 router.get('/profile-Data/:mail', Profile);
 router.post('/add-sector', Settings)
 router.get('/view-message', ViewMessage);
+router.post('/add-job', job);
 router.post('/credits-apply',Credits);
 router.put('/founder-update/:mail',Founder);
+router.post('/about', About);
 router.put('/team_member/:mail',Team_member);
 router.post('/Add_award', newaward);
+//router.post('/pdfdocument', PdfDocument);
 router.post('/establish-connections', EstablishConnection)
 module.exports = router;
