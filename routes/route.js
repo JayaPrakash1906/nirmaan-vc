@@ -21,6 +21,7 @@ const Credits = require('../controller/startupTeam/Credits.js');
 const Founder = require('../controller/startupTeam/founder.js');
 const About = require('../controller/startupTeam/about.js');
 //const PdfDocument = require('../controller/startupTeam/pdfdocument.js');
+const Raiserequest =require('../controller/startupTeam/raiserequest.js');
 const Team_member = require('../controller/startupTeam/team_member.js');
 const newaward = require('../controller/startupTeam/newawards.js');
 router.post('/login', LoginController);
@@ -45,6 +46,7 @@ router.put('/founder-update/:mail',Founder);
 router.post('/about', About);
 router.put('/team_member/:mail',Team_member);
 router.post('/Add_award', newaward);
+router.post('/query-raise', Raiserequest);
 //router.post('/pdfdocument', PdfDocument);
 router.post('/establish-connections', EstablishConnection)
 module.exports = router;

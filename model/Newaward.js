@@ -7,9 +7,10 @@ const NewAward = async (awardname, awardorg, prizemoney, awarddate, designation)
             [awardname, awardorg, prizemoney, awarddate, designation],
             (err, result) => {
                 if (err) {
-                    reject(err);
+                    reject(err);  psql
+                    
                 } else {
-                    if (result.rowCount > 0) {  // Check if rows were affected
+                    if (result.rowCount > 0) { 
                         resolve({ status: "Data inserted successfully" });
                     } else {
                         resolve({ status: "Not inserted" });

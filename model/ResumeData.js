@@ -1,5 +1,5 @@
 const client = require('../utils/conn');
-// const Authenticate = require('../utils/Authenticate');
+
 const ResumeData = (page_data, page_number) => {
     return new Promise((resolve, reject) => {
         client.query('SELECT * FROM resume_data ORDER BY resume_email LIMIT $1 OFFSET ($2 - 1) *$1', [page_data, page_number],

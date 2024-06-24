@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const path = require('path')
 const redis = require('redis');
 const redisClient = redis.createClient();
-// const Authenticate = require('../utils/Authenticate');
 require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 const LoginModel = (user_mail, user_password) => {
     return new Promise((resolve, reject) => {
