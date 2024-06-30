@@ -10,7 +10,7 @@ const ProfileModel = async(mail) => {
             {
                 // resolve({data : result})
                 if(result.rows.length > 0)
-                {
+                { 
                     resolve({mail});
                 }
                 else

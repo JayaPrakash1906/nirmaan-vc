@@ -34,7 +34,6 @@ router.get('/getdata', GetAllResumeController);
 router.post('/resumeupload', ResumeUpload );
 router.get('/resume-fetch/:page_data/:page_number', Resumedata);
 router.post('/resume-send', ApprovalRequest);
-router.post('/profile', Profile);
 router.delete('/delete-resume/:id', DeleteResume);
 router.post('/mentor/add', AddMentor);
 router.get('/profile-Data/:mail', Profile);
@@ -47,6 +46,6 @@ router.post('/about', About);
 router.put('/team_member/:mail',Team_member);
 router.post('/Add_award', newaward);
 router.post('/query-raise', Raiserequest);
-//router.post('/pdfdocument', PdfDocument);
+//router.post('/pdfdocument', PdfDocument);  
 router.post('/establish-connections', EstablishConnection)
 module.exports = router;
