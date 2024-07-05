@@ -26,12 +26,14 @@ import Cms from './pages/cms/Cms.js';
 import Profile from './pages/profile/Profile.js';
 import DisEnt from './Customer/Pages/DisEnt/DisEnt.js';
 import CustomerProfile from './Customer/Pages/Profile/Profile.js';
-import Applycustomerprofile from './Customer/Pages/Profile/Profileapply.js';
+import Profileapply from './Customer/Pages/Profile/Profileapply.js';
 import CustomerMentor from './Customer/Pages/Mentor/Mentor.js';
 import CustomerStartup from './Customer/Pages/Startups/Startups.js';
 import CustomerContacts from './Customer/Pages/Contact/contact.js';
 import Jobs from './Customer/Pages/Job/Job.js';
+import Addjob from './Customer/Pages/Job/Addjob.js';
 import Resources from './Customer/Pages/Resources/Resources.js';
+
 function App() {
   const [LoggedIn, setLoggedIn] = useState(false);
   const authenticate = async() => {
@@ -89,13 +91,14 @@ function App() {
                   <Route path="/customer/Home" element={< CustomerHome/>} />
                   <Route path="/customer/resume" element={<Resume />} />
                   <Route path="/customer/profile" element={<CustomerProfile />} />
-                  <Route path="/profile/addprofile" element={<Applycustomerprofile />} />
-                  <Route path="/customer/displine-ent" element={<DisEnt />} />
+                  <Route path="/profile/addprofile" element={<Profileapply />} />
                   <Route path="/customer/mentor" element={<CustomerMentor />} />
-                  <Route path="/customer/startup" element={<CustomerStartup />} />
+                  <Route path="/customer/Startups" element={<CustomerStartup />} />
                   <Route path="/customer/contacts" element={<CustomerContacts />} />
                   <Route path="/customer/jobs" element={<Jobs />} />
+                  <Route path="/jobs/new" element={<Addjob />} />
                   <Route path="/customer/resources" element={<Resources />} />
+                  <Route path="/customer/DE" element={<DisEnt />} />
                  
 
              </Route>
