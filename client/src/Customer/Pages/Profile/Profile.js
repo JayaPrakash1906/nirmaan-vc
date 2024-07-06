@@ -3,12 +3,19 @@ import SideBar from "../../components/SideBar";
 import NavBar from "../../../components/NavBar";
 import {  FaEye, FaPen } from "react-icons/fa";
 import Foundernew from "../../components/Foundernew";
-import {BiChevronDown } from 'react-icons/bi'
+import Membernew from "../../components/Membernew";
+import Uploadocument from "../../components/Uploadocument";
+import Awards from "../../components/Awards";
+import { BiPin } from "react-icons/bi"
+
 
 
 
 function Profile() {
     const[showFoundernew, setFoundernew] = useState(false);
+    const[showMembernew, setMembernew] = useState(false);
+    const[showUploadocument, setUploadocument] = useState(false);
+    const[showAwards, setAwards] = useState(false);
     return (
         <div className="flex">
             <section className="w-[66px]">
@@ -51,7 +58,7 @@ function Profile() {
                                 <div className="flex flex-col shadow p-2  ">
                                     <div className="flex justify-between items-center mb-2">
                                         <h2 className="text-xl font-semibold">Team Members</h2>
-                                        <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-gray-100 rounded-md bg-transparent transition-all ease-in-out md:text-xs font-semibold p-2 text-black">
+                                        <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-gray-100 rounded-md bg-transparent transition-all ease-in-out md:text-xs font-semibold p-2 text-black" onClick={()=>setMembernew(true)}>
                                             <FaPen />
                                         </button>
                                     </div>
@@ -87,7 +94,7 @@ function Profile() {
                                                             <div className="flex justify-between items-center mt-2">
                                                                 <h2 className="text-xl font-semibold mb-4">About</h2>
                                                                     <div className="flex space-x-1">
-                                                                        <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white">
+                                                                        <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white"onClick={()=>setUploadocument(true)}>
                                                                         Add +
                                                                         </button>
                                                                     </div>     
@@ -97,7 +104,7 @@ function Profile() {
                                                             <div className="flex justify-between items-center mt-2">
                                                                 <h2 className="text-xl font-semibold mb-4">Awards & Recognitions</h2>
                                                                     <div className="flex space-x-1">
-                                                                        <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white">
+                                                                        <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white"onClick={()=>setAwards(true)}>
                                                                         Add +
                                                                         </button>
                                                                     </div>     
@@ -115,9 +122,16 @@ function Profile() {
             <div>
                     
                     <form onSubmit={setFoundernew}>
-                    <div className="flex justify-between items-center mb-2">
-                                        <h2 className="text-xl font-semibold">Founder</h2>
-                                    </div>
+                    <div className="flex justify-start p-4 text-lg ">
+          <span className="flex-grow font-bold">
+             Contacts
+          </span>
+          <button type="button" className="text-white bg-gray-300 p-1 rounded-md font-bold mr-2">
+          cancel
+        </button>
+          <button type="button" className="text-white bg-gray-600 p-1 rounded-md font-bold">
+          update
+        </button></div>
                     <div className="grid grid-cols-7 gap-4 ">
                         <div>
                         <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Name" />
@@ -128,16 +142,16 @@ function Profile() {
                         <div>
                         <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Number" />
                         </div>
-                        <select
-        id="options"
-        //value={selectedOption}
-        //onChange={handleSelectChange}
-        className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Gender" >
-        <option value="">Gender</option>
-        <option value="option1">Male </option>
-        <option value="option2">Female</option>
-        <option value="option3">Others</option>
-      </select>
+                            <select
+                                id="options"
+                                //value={selectedOption}
+                                //onChange={handleSelectChange}
+                                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Gender" >
+                                    <option value="">Gender</option>
+                                    <option value="option1">Male </option>
+                                    <option value="option2">Female</option>
+                                    <option value="option3">Others</option>
+                            </select>
                         <div>
                         <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="StudentID" />
                         </div>
@@ -152,6 +166,96 @@ function Profile() {
                     </form>
             </div>
              </Foundernew>
+
+             <Membernew isVisible={showMembernew} onClose={()=>setMembernew(false)}>
+        
+        <div>
+                
+                <form onSubmit={setMembernew}>
+                <div className="flex justify-start p-4 text-lg ">
+      <span className="flex-grow font-bold">
+         Member
+      </span>
+      <button type="button" className="text-white bg-gray-300 p-1 rounded-md font-bold mr-2">
+      cancel
+    </button>
+      <button type="button" className="text-white bg-gray-600 p-1 rounded-md font-bold">
+      update
+    </button></div>
+                <div className="grid grid-cols-4 gap-4 ">
+                    <div>
+                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Name" />
+                    </div>
+                    <div>
+                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Email" />
+                    </div>
+                    <div>
+                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Number" />
+                    </div>
+                    <div>
+                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Designation" />
+                    </div>
+                    </div>
+                    </form>
+            </div>
+             </Membernew>
+
+             <Uploadocument isVisible={showUploadocument} onClose={()=>setUploadocument(false)}>
+        
+        <div>
+                
+                <form onSubmit={setUploadocument}>
+                <div className="flex justify-start p-2 text-lg ">
+      <span className="flex-grow font-bold">
+         Upload
+      </span>
+      <button type="button" className="text-white bg-gray-300 p-1 rounded-md font-bold mr-2">
+      close
+    </button>
+      <button type="button" className="text-white bg-gray-600 p-1 rounded-md font-bold">
+      Submit
+    </button></div>
+                <div className="grid grid-rows-2 gap-4 ">
+                    <div>
+                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Document Title" />
+                    </div>
+                    <div> 
+                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Upload pdf" />
+                    </div>
+                     *Upload Pdf Only
+                    </div>
+                    </form>
+            </div>
+             </Uploadocument>
+
+
+             <Awards isVisible={showAwards} onClose={()=>setAwards(false)}>
+        
+        <div>
+                
+                <form onSubmit={setAwards}>
+                <div className="flex justify-start p-2 text-lg ">
+      <span className="flex-grow font-bold">
+         Upload
+      </span>
+      <button type="button" className="text-white bg-gray-300 p-1 rounded-md font-bold mr-2">
+      close
+    </button>
+      <button type="button" className="text-white bg-gray-600 p-1 rounded-md font-bold">
+      Submit
+    </button></div>
+                <div className="grid grid-rows-2 gap-4 ">
+                    <div>
+                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Document Title" />
+                    </div>
+                    <div> 
+                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Upload pdf" />
+                    </div>
+                     *Upload Pdf Only
+                    </div>
+                    </form>
+            </div>
+             </Awards>
         </div>
     );
 }
