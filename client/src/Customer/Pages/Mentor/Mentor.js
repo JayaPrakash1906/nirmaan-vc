@@ -1,9 +1,13 @@
-import React from "react";
+import React,  { useState } from "react";
 import SideBar from "../../components/SideBar";
 import NavBar from "../../../components/NavBar";
 import src from "../../../img/image.png"
+import Addmentor from "../../components/Addmentor";
+
 function CustomerMentor()
+
 {
+  const[showAddmentor, setAddmentor] = useState(false);
     return(
         
         <div className="flex">
@@ -42,27 +46,60 @@ function CustomerMentor()
     <span className="  text-xl font-semibold text-gray-700">
             All Mentors
           </span>
-          <form className='p-4 w-[500px] relative'>
-            <div className="relative flex items-center">
-  <input
-    type="text"
-    className="border border-blue-300 rounded-md bg-white-500 ms-4 md:h-[34px] sm:w-[50%]"
-    placeholder="Search"
-  />
-  <button
-    type="button"
-    className="text-white bg-gray-600 p-1 m-2 rounded-md font-bold ml-auto"
-  >
-    Add Mentor Hour
-  </button>
-</div>
+          <div className="flex justify-start p-10 text-md mx-8">
+          <span className="flex-grow">
+          <input
+      type="text"
+      className="border border-blue-300 rounded-md bg-white-500 mr-8 md:h-[34px] sm:w-[50%]"
+      placeholder="Search"
+    />
+          </span>
+          <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white" onClick={()=>setAddmentor(true)}>
+          Add Mentor Hour
+        </button></div>
 
-          </form>
           
           
           </div>
     
             </div>
+            <Addmentor isVisible={showAddmentor} onClose={()=>setAddmentor(false)}>
+        
+        <div>
+                
+                <form onSubmit={setAddmentor}>
+                <div className="flex justify-start p-2 text-lg ">
+      <span className="flex-grow font-bold">
+         Add Mentor Hour
+      </span>
+     </div>
+                <div className="grid grid-cols-2 gap-4 ">
+                    <div>
+                      <select id="options"
+                                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Gender" >
+                                    <option value="">Gender</option>
+                                    <option value="option1">Male </option></select>
+                    </div>
+                    <div>
+                      <select id="options"
+                                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Gender" >
+                                    <option value="">Gender</option>
+                                    <option value="option1">Male </option></select>
+                    </div>
+                    <div>
+                    <input type="text" className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Select Date" ></input>
+                    </div>
+                    <div> 
+                    <input type="text" className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Select Time" ></input>
+                    </div>
+                    </div>
+                    </form>
+                    <div><textarea id="description" name="description" rows="4" className=" mt-6 w-full p-2 border border-gray-300 rounded" placeholder="Description" ></textarea></div>
+                    <button type="button" className="items-right justify-center active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white">
+                    Update
+                    </button>
+            </div>
+             </Addmentor>
         </div>
     )
 }

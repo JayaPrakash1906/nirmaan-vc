@@ -6,7 +6,8 @@ import Foundernew from "../../components/Foundernew";
 import Membernew from "../../components/Membernew";
 import Uploadocument from "../../components/Uploadocument";
 import Awards from "../../components/Awards";
-import { BiPin } from "react-icons/bi"
+import Aboutedit from "../../components/Aboutedit";
+
 
 
 
@@ -16,6 +17,7 @@ function Profile() {
     const[showMembernew, setMembernew] = useState(false);
     const[showUploadocument, setUploadocument] = useState(false);
     const[showAwards, setAwards] = useState(false);
+    const[showAboutedit, setAboutedit] =useState(false);
     return (
         <div className="flex">
             <section className="w-[66px]">
@@ -36,12 +38,12 @@ function Profile() {
                                     <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-gray-100 rounded-md bg-transparent transition-all ease-in-out md:text-xs font-semibold p-2 text-black">
                                         <FaEye />
                                     </button>
-                                    <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-gray-100 rounded-md bg-transparent transition-all ease-in-out md:text-xs font-semibold p-2 text-black">
+                                    <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-gray-100 rounded-md bg-transparent transition-all ease-in-out md:text-xs font-semibold p-2 text-black"onClick={()=>setAboutedit(true)}>
                                         <FaPen />
                                     </button>
                             </div>
                         </div>
-                                <p className="text-gray-700">
+                                <p className="text-gray-700 ">
                                     We are a knowledge-based company providing enhanced solutions to industries.
                                 </p>
                     </div>
@@ -235,27 +237,57 @@ function Profile() {
                 
                 <form onSubmit={setAwards}>
                 <div className="flex justify-start p-2 text-lg ">
-      <span className="flex-grow font-bold">
-         Upload
+      <span className="flex-grow font-semibold">
+         Add New Award / Recognitions
       </span>
-      <button type="button" className="text-white bg-gray-300 p-1 rounded-md font-bold mr-2">
-      close
+      <button type="button" className="text-red-500 bg-gray-100 p-1 rounded-sm font-semibold text-sm mr-2">
+      Cancel
     </button>
-      <button type="button" className="text-white bg-gray-600 p-1 rounded-md font-bold">
-      Submit
+      <button type="button" className="text-white bg-green-600 p-1 rounded-sm font-semibold text-sm">
+      Save
     </button></div>
                 <div className="grid grid-rows-2 gap-4 ">
-                    <div>
-                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Document Title" />
-                    </div>
-                    <div> 
-                    <input type="text" className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full " placeholder="Upload pdf" />
-                    </div>
-                     *Upload Pdf Only
+                
+      <div className="grid grid-cols-2 gap-4 m-2">
+                <div>
+                    <input type="text" className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Award / Recognition Name"/>
+                </div>
+                <div>
+                    <input type="text" className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Award / Recognition Org"/>
+                </div>
+                <div>
+                    <input type="text" className="  w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Price Money (if any)"/>
+                </div>
+                <div>
+                    <input type="text" className=" w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Awarded Date"/>
+                </div>
+                <div>
+                    <textarea id="description" name="description" rows="4" className=" mt-6 w-full p-2 border border-gray-300 rounded" placeholder="Description" ></textarea></div>
+                <div>
+                    <input type="text" className=" w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Awarded Date"/>
+                </div>
+        </div>
+        
+            
                     </div>
                     </form>
             </div>
              </Awards>
+
+             <Aboutedit isVisible={showAboutedit} onClose={()=>setAboutedit(false)}>
+        
+             <div>
+             
+                <form onSubmit={setAboutedit}>
+                 <textarea id="dAbout" name="About" rows="4" className="w-full p-2 border border-gray-300 rounded" placeholder="About" ></textarea>
+                </form>
+                <div className="flex">
+  <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] text-white mt-2 bg-green-600 p-2 mb-2 items-end justify-end rounded-sm font-semibold ml-auto">
+    Submit
+  </button>
+</div>
+            </div>
+            </Aboutedit>
         </div>
     );
 }
