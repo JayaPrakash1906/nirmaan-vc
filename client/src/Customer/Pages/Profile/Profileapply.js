@@ -35,8 +35,8 @@ function Profileapply() {
                                             <textarea id="description" name="description" rows="4" className="w-full p-2 border border-gray-300 rounded" placeholder="Description" ></textarea>
                                         </div>
                                             <div className="flex justify-center ">
-                                                <button type="button" className="px-4 py-2 bg-gray-300 text-gray-700 font-bold rounded hover:bg-gray-400 ">Cancel</button>
-                                                <button type="submit" className="px-4 py-2 bg-green-500 ml-2 text-white font-bold rounded hover:bg-green-600">Apply</button></div>
+                                                <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] px-4 py-2 bg-gray-300 text-gray-700 font-bold rounded hover:bg-gray-400 ">Cancel</button>
+                                                <button type="submit" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] px-4 py-2 bg-green-500 ml-2 text-white font-bold rounded hover:bg-green-600">Apply</button></div>
                             </form>
                         </div>
                     </div>

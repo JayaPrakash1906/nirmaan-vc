@@ -57,10 +57,46 @@ function CustomerMentor()
           <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white" onClick={()=>setAddmentor(true)}>
           Add Mentor Hour
         </button></div>
+        <div className="overflow-x-auto sm:-mx-5 lg:-mx-8">
+                   <div className="py-2 inline-block min-w-full sm:px-4 lg:px-8">
+                     <div className="overflow-hidden">
+                        <table className="min-w-full">
+                          <thead className="bg-white border-b">
+                         
+                            <tr>
 
-          
-          
+                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                            Profile
+                            </th>                            
+                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                            Name
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                            Institute
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                            Startups
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                            View
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                            Request
+                            </th>   
+                            
+                            </tr>
+                          </thead>
+                          <tbody className="bg-white divide-y divide-gray-200">
+                              <tr>
+                              <td colSpan="7" className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                                No data available
+                              </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      </div></div></div> 
           </div>
+          
     
             </div>
             <Addmentor isVisible={showAddmentor} onClose={()=>setAddmentor(false)}>
@@ -95,7 +131,7 @@ function CustomerMentor()
                     </div>
                     </div>
                     </form>
-                    <div><textarea id="description" name="description" rows="4" className=" mt-6 w-full p-2 border border-gray-300 rounded" placeholder="Description" ></textarea></div>
+                    <div><textarea id="description" name="description" rows="4" className=" mt-6 w-full p-2 border border-gray-300 rounded resize-none" placeholder="Description" ></textarea></div>
                     <button type="button" className=" active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white">
                     Update
                     </button>

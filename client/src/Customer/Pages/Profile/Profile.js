@@ -74,10 +74,10 @@ function Profile() {
                                     </div>
                                         <div className="grid grid-cols-4 gap-4  m-2 ">
                                             <div>
-                                                <div className="   p-2 shadow font-bold">Rs.0</div>
+                                                <div className=" p-2 shadow font-bold">Rs.0</div>
                                             </div>
                                             <div>
-                                                <div className="   p-2 shadow font-bold">Rs.0</div>
+                                                <div className="   p-2 shadow font-bold ">Rs.0</div>
                                             </div>
                                             <div>
                                                 <div className="   p-2 shadow font-bold">Rs.0</div>
@@ -96,11 +96,11 @@ function Profile() {
                                                             <div className="flex justify-between items-center mt-2">
                                                                 <h2 className="text-xl font-semibold mb-4">About</h2>
                                                                     <div className="flex space-x-1">
-                                                                        <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white"onClick={()=>setUploadocument(true)}>
+                                                                        <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white mb-2"onClick={()=>setUploadocument(true)}>
                                                                         Add +
                                                                         </button>
                                                                     </div>     
-                                                            </div> <div className="">1.Progress Review Templete </div>
+                                                            </div> <div className="">1.Progress Review Templete</div><div> <input type="text" className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0 "placeholder="No document upload"/> </div>
                                                         </div>
                                                         <div className="flex flex-col p-2 m-3 shadow ">
                                                             <div className="flex justify-between items-center mt-2">
@@ -110,7 +110,7 @@ function Profile() {
                                                                         Add +
                                                                         </button>
                                                                     </div>     
-                                                            </div> <div className=""> </div>
+                                                            </div> 
                                                         </div>
                                             
                                             </div>
@@ -284,7 +284,7 @@ function Profile() {
               id="description"
               name="description"
               rows="4"
-              className="mt-6 w-full p-2 border border-gray-300 rounded"
+              className="mt-6 w-full p-2 border border-gray-300 rounded resize-none"
               placeholder="Description"
             ></textarea></div>
             <div><h5 className="text-md mb-2 ml-3">Award / Recognition document (if any)</h5>
@@ -304,7 +304,7 @@ function Profile() {
              <div>
              
                 <form onSubmit={setAboutedit}>
-                 <textarea id="dAbout" name="About" rows="4" className="w-full p-2 border border-gray-300 rounded" placeholder="About" ></textarea>
+                 <textarea id="dAbout" name="About" rows="4" className="w-full p-2 border border-gray-300 rounded resize-none" placeholder="About" ></textarea>
                 </form>
                 <div className="flex">
   <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] text-white mt-2 bg-green-600 p-2 mb-2 items-end justify-end rounded-sm font-semibold ml-auto">
