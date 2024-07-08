@@ -77,25 +77,26 @@ function CustomerMentor()
                     <div>
                       <select id="options"
                                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Gender" >
-                                    <option value="">Gender</option>
-                                    <option value="option1">Male </option></select>
+                                    <option value="">Select Startup</option>
+                                    <option value="nirmaan">Nirmaan </option>
+                                    <option value="nirmaan">Nirmaan </option></select>
                     </div>
                     <div>
                       <select id="options"
                                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Gender" >
-                                    <option value="">Gender</option>
-                                    <option value="option1">Male </option></select>
+                                    <option value="Mentor">Select Mentor</option>
+                                    <option value="sir">OIE </option></select>
                     </div>
                     <div>
-                    <input type="text" className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Select Date" ></input>
+                    <input type="Date" className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Select Date" ></input>
                     </div>
                     <div> 
-                    <input type="text" className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Select Time" ></input>
+                    <input type="Time" className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Select Time" ></input>
                     </div>
                     </div>
                     </form>
                     <div><textarea id="description" name="description" rows="4" className=" mt-6 w-full p-2 border border-gray-300 rounded" placeholder="Description" ></textarea></div>
-                    <button type="button" className="items-right justify-center active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white">
+                    <button type="button" className=" active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white">
                     Update
                     </button>
             </div>

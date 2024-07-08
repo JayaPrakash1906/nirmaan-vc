@@ -231,48 +231,73 @@ function Profile() {
              </Uploadocument>
 
 
-             <Awards isVisible={showAwards} onClose={()=>setAwards(false)}>
+             <Awards isVisible={showAwards} onClose={() => setAwards(false)}>
+  <div>
+    <form>
+      <div className="flex justify-start p-2 text-lg">
+        <span className="flex-grow font-semibold">
+          Add New Award / Recognitions
+        </span>
+        <button
+          type="button"
+          className="text-red-500 bg-gray-100 p-1 rounded-sm font-semibold text-sm mr-2"
+          onClick={() => setAwards(false)}
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          className="text-white bg-green-600 p-1 rounded-sm font-semibold text-sm"
+        >
+          Save
+        </button>
+      </div>
+      
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+          <h5 className="text-md mb-2 ml-3">Award / Recognition Name</h5>
+            <input
+              type="text"
+              className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0"/>
+          </div>
+          <div>
+          <h5 className="text-md mb-2 ml-3">Award / Recognition Org</h5>
+            <input
+              type="text"
+              className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0"/>
+          </div>
+          <div>
+          <h5 className="text-md mb-2 ml-3">Prize Money (if any)</h5>
+            <input
+              type="text"
+              className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0"/>
+          </div>
+          <div>
+          <h5 className="text-md mb-2 ml-3">Awarded Date</h5>
+            <input
+              type="Date"
+              className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0"/>
+          </div>
+          <div>
+          <h5 className="text-md  ml-3">Description</h5>
+            <textarea
+              id="description"
+              name="description"
+              rows="4"
+              className="mt-6 w-full p-2 border border-gray-300 rounded"
+              placeholder="Description"
+            ></textarea></div>
+            <div><h5 className="text-md mb-2 ml-3">Award / Recognition document (if any)</h5>
+            <input
+              type="file"
+              className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0"/>
+          </div>
+          </div>
         
-        <div>
-                
-                <form onSubmit={setAwards}>
-                <div className="flex justify-start p-2 text-lg ">
-      <span className="flex-grow font-semibold">
-         Add New Award / Recognitions
-      </span>
-      <button type="button" className="text-red-500 bg-gray-100 p-1 rounded-sm font-semibold text-sm mr-2">
-      Cancel
-    </button>
-      <button type="button" className="text-white bg-green-600 p-1 rounded-sm font-semibold text-sm">
-      Save
-    </button></div>
-                <div className="grid grid-rows-2 gap-4 ">
-                
-      <div className="grid grid-cols-2 gap-4 m-2">
-                <div>
-                    <input type="text" className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Award / Recognition Name"/>
-                </div>
-                <div>
-                    <input type="text" className="w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Award / Recognition Org"/>
-                </div>
-                <div>
-                    <input type="text" className="  w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Price Money (if any)"/>
-                </div>
-                <div>
-                    <input type="text" className=" w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Awarded Date"/>
-                </div>
-                <div>
-                    <textarea id="description" name="description" rows="4" className=" mt-6 w-full p-2 border border-gray-300 rounded" placeholder="Description" ></textarea></div>
-                <div>
-                    <input type="text" className=" w-full border-0 border-b-2 border-gray-300 focus:border-blue-500 focus:ring-0" placeholder="Awarded Date"/>
-                </div>
-        </div>
-        
-            
-                    </div>
-                    </form>
-            </div>
-             </Awards>
+      
+    </form>
+  </div>
+</Awards>
 
              <Aboutedit isVisible={showAboutedit} onClose={()=>setAboutedit(false)}>
         
