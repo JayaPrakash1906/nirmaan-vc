@@ -2,7 +2,6 @@ import React from "react";
 import SideBar from "../../components/SideBar";
 import NavBar from "../../../components/NavBar";
 import { FaArrowLeft} from "react-icons/fa";
-import { BiChevronDown } from "react-icons/bi";
 
 function Addjob()
 {
@@ -47,8 +46,8 @@ function Addjob()
                                                           </select>
                                                           <select id="options"
                                                                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Gender" >
-                                                                    <option value="">Gender</option>
-                                                                    <option value="option1">Male </option>
+                                                                    <option value="Renumeration">Renumeration</option>
+                                                                    <option value="">Male </option>
                                                                     <option value="option2">Female</option>
                                                                     <option value="option3">Others</option>
                                                           </select></div>
