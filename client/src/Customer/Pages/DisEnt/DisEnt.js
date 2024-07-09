@@ -15,11 +15,11 @@ function DisEnt() {
                         Dashboard / DE
                     </span>
                 </div>
-                    <span className="p-10 text-md font-bold">
+                    <span className="p-10 text-md font-semibold">
                         Disciplined Entrepreneurship
                     </span>
                     <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                        <div className="bg-green-600 text-white p-4 m-10 mt-4 font-semibold">
+                        <div className="bg-green-600 text-white p-2 m-10 mt-4">
                             Disciplined Entrepreneurship
                         </div>
                                 <div className="flex">
@@ -27,23 +27,23 @@ function DisEnt() {
                                         <div className="mb-4 font-semibold">Select Module</div>
                                             <ul>
                                                 <li className="flex items-center mb-2 p-2 rounded-lg bg-green-100">
-                                                   <span className="mr-2">🧠</span> Problem Identification
+                                                   <span className="mr-2"></span> Problem Identification
                                                 </li>
                                                 <li className="flex items-center mb-2 p-2 rounded-lg hover:bg-gray-100">
-                                                     <span className="mr-2">🔍</span> Problem Validation
+                                                     <span className="mr-2"></span> Problem Validation
                                                 </li>
                                                 <li className="flex items-center mb-2 p-2 rounded-lg hover:bg-gray-100">
-                                                    <span className="mr-2">👥</span> Lead Customer EOI
+                                                    <span className="mr-2"></span> Lead Customer EOI
                                                 </li>
                                                     <li className="flex items-center mb-2 p-2 rounded-lg hover:bg-gray-100">
-                                                <span className="mr-2">🎓</span> Graduation
+                                                <span className="mr-2"></span> Graduation
                                                 </li>
                                             </ul>
                                         </div>
                                     <div className="w-2/3 p-4">
                                 <div className="font-semibold mb-4">All Steps</div>
                                     {['Market segmentation', 'Select a beachhead market', 'Build an end user profile'].map((step, index) => (
-                                        <div key={index} className="flex items-center mb-4 p-4 bg-white shadow-sm rounded-lg">
+                                        <div type="progressbar" className="flex items-center mb-4 p-4 bg-white shadow-sm rounded-lg">
                                             <div className="w-full">
                                                 <div className="font-semibold">{step}</div>
                                                     <div className="h-4 w-full bg-gray-200 rounded mt-2 relative">
