@@ -11,6 +11,7 @@ const CustomerHome = () => {
                 </section>
                 <section id="" className="flex-grow">
                 <NavBar />
+            
                 </section>
         </div>
     )

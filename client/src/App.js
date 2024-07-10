@@ -20,7 +20,7 @@ import Resume from './Customer/Pages/Resume/Resume';
 import UploadFile from './pages/UploadFile/UploadFile';
 import View from './pages/UploadFile/View';
 import ViewComponents from './pages/UploadFile/ViewComponents';
-// import Todo from '../src/__test__/todo'
+//import Todo from '../src/__test__/todo'
 import ProtectedRoutes from './utils/ProtectedRoutes';
 import Cms from './pages/cms/Cms.js';
 import Profile from './pages/profile/Profile.js';
@@ -33,6 +33,7 @@ import CustomerContacts from './Customer/Pages/Contact/contact.js';
 import Jobs from './Customer/Pages/Job/Job.js';
 import Addjob from './Customer/Pages/Job/Addjob.js';
 import Resources from './Customer/Pages/Resources/Resources.js';
+import Myconnections from './Customer/Pages/Contact/Myconnections.js';
 
 function App() {
   const [LoggedIn, setLoggedIn] = useState(false);
@@ -99,6 +100,7 @@ function App() {
                   <Route path="/jobs/new" element={<Addjob />} />
                   <Route path="/customer/resources" element={<Resources />} />
                   <Route path="/customer/DE" element={<DisEnt />} />
+                  <Route path="/contact/new" element={<Myconnections />} />
                  
 
              </Route>

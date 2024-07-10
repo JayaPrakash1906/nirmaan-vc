@@ -2,6 +2,7 @@ import React from "react";
 import SideBar from "../../components/SideBar";
 import NavBar from "../../../components/NavBar";
 
+
 const contacts = [
   {
     name: "prasath",
@@ -35,7 +36,10 @@ function CustomerContacts() {
           <span className="flex-grow">Contacts</span>
           <button
             type="button"
-            className="text-white bg-gray-600 p-1 rounded-md font-bold"
+            onClick={() =>
+              (window.location.href = "http://localhost:3000/contact/new")
+            }
+            className="active:scale-[.90] active:duration-70 hover:scale-[1.02] text-white bg-green-600 p-2 rounded-md font-semibold"
           >
             My Connections
           </button>

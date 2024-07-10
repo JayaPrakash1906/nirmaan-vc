@@ -32,7 +32,7 @@ function Profileapply() {
                                 </div>
                                         <div className="mb-6">
                                             <label htmlFor="description" className="block text-gray-700 font-bold mb-4 mt-6">Why would you like to apply?</label>
-                                            <textarea id="description" name="description" rows="4" className="w-full p-2 border border-gray-300 rounded" placeholder="Description" ></textarea>
+                                            <textarea id="description" name="description" rows="4" className="w-full p-2 border border-gray-300 rounded resize-none" placeholder="Description" ></textarea>
                                         </div>
                                             <div className="flex justify-center ">
                                                 <button type="button" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] px-4 py-2 bg-gray-300 text-gray-700 font-bold rounded hover:bg-gray-400 ">Cancel</button>
