@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "../../components/SideBar";
 import NavBar from "../../../components/NavBar";
-const Myconnections = () => {
+const MyConnections = () => {
     
     return(
         
@@ -90,4 +90,4 @@ const Myconnections = () => {
         </div>
     )
 }
-export default Myconnections;
+export default MyConnections;

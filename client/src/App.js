@@ -33,7 +33,8 @@ import CustomerContacts from './Customer/Pages/Contact/contact.js';
 import Jobs from './Customer/Pages/Job/Job.js';
 import Addjob from './Customer/Pages/Job/Addjob.js';
 import Resources from './Customer/Pages/Resources/Resources.js';
-import Myconnections from './Customer/Pages/Contact/Myconnections.js';
+import MyConnections from './Customer/Pages/Contact/MyConnections.js';
+import RaiseRequest from './Customer/components/RaiseRequest.js';
 
 function App() {
   const [LoggedIn, setLoggedIn] = useState(false);
@@ -100,7 +101,8 @@ function App() {
                   <Route path="/jobs/new" element={<Addjob />} />
                   <Route path="/customer/resources" element={<Resources />} />
                   <Route path="/customer/DE" element={<DisEnt />} />
-                  <Route path="/contact/new" element={<Myconnections />} />
+                  <Route path="/contact/new" element={<MyConnections />} />
+                  <Route path="home/request" element={<RaiseRequest />} />
                  
 
              </Route>

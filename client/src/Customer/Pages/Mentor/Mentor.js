@@ -106,8 +106,7 @@ function CustomerMentor() {
                     <tr>
                       <td
                         colSpan="7"
-                        className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center"
-                      >
+                        className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
                         No data available
                       </td>
                     </tr>
