@@ -57,8 +57,8 @@ function Addjob()
                                                            <textarea id="description" name="description" rows="4" className="mt-12 w-full p-2 border border-blue-300 rounded resize-none" placeholder="Requirements" ></textarea>
                                                            <textarea id="description" name="description" rows="4" className="mt-12 w-full p-2 border border-blue-300 rounded mb-4 resize-none" placeholder="Description" ></textarea>
                                                            <div className="flex justify-center "> 
-                                                <button type="Preview" className="px-4 py-2 bg-gray-300 text-gray-700 font-bold rounded hover:bg-gray-400  ">Preview</button>
-                                                <button type="Job Post" className="px-4 py-2 bg-green-500 ml-2 text-white font-bold rounded hover:bg-green-600">Post Job</button></div>
+                                                <button type="Preview" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] px-4 py-2 bg-gray-300 text-gray-700 font-bold rounded hover:bg-gray-400  ">Preview</button>
+                                                <button type="Job Post" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] px-4 py-2 bg-green-500 ml-2 text-white font-bold rounded hover:bg-green-600">Post Job</button></div>
                                                         </div>
 
                                                           <div className="px-6 py-4"></div>

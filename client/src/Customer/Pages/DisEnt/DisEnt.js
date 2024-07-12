@@ -3,7 +3,8 @@ import SideBar from "../../components/SideBar";
 import NavBar from "../../../components/NavBar";
 
 function DisEnt() {
-  const [progress, setProgress] = useState([0, 0, 0, 0]);
+  const [progress, setProgress] = useState([0, 0, 0]);
+  
 
   const handleProgressChange = (index, value) => {
     const newProgress = [...progress];
@@ -63,7 +64,7 @@ function DisEnt() {
                   "Market segmentation",
                   "Select a beachhead market",
                   "Build an end user profile",
-                  "Estimating TAM",
+                  
                 ].map((step, index) => (
                   <div
                     key={index}
@@ -99,7 +100,7 @@ function DisEnt() {
                           />
                         </div>
                         <button
-                          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+                          className="active:scale-[.90] active:duration-70 hover:scale-[1.02] px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
                           Complete
                         </button>
                       </div>

@@ -3,9 +3,27 @@ import SideBar from "../../components/SideBar";
 import NavBar from "../../../components/NavBar";
 import src from "../../../img/image.png";
 import Addmentor from "../../components/Addmentor";
+import { AgGridReact } from 'ag-grid-react'; // Ensure AgGridReact is imported
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 function CustomerMentor() {
   const [showAddmentor, setAddmentor] = useState(false);
+  const columnDefs = [
+    { headerName: "Profile", field: "profile" },
+    { headerName: "Name", field: "name" },
+    { headerName: "Institute", field: "institute" },
+    { headerName: "Startups", field: "startups" },
+    { headerName: "View", field: "view" },
+    { headerName: "Request", field: "request" }
+  ];
+
+  // Sample rowData for demonstration purposes
+  const rowData = [
+    { profile: "Profile 1", name: "John Doe", institute: "ABC Institute", startups: 5, view: "View", request: "Request" },
+    { profile: "Profile 2", name: "Jane Smith", institute: "XYZ Institute", startups: 3, view: "View", request: "Request" }
+  ];
+
   return (
     <div className="flex">
       <section className="w-[66px]">
@@ -15,19 +33,19 @@ function CustomerMentor() {
       <div className="flex-grow">
         <NavBar />
         <div className="items-center px-4 py-4 mt-2 sm:mt-10 md:mt-1 p-8">
-          <span className=" p-5 text-slate-500 text-md">
+          <span className="p-5 text-slate-500 text-md">
             Dashboard / Mentors
           </span>
         </div>
         <span className="p-10 text-md">Mentors</span>
-        <div className=" flex flex-col items-left justify-center p-4 m-10 border ">
+        <div className="flex flex-col items-left justify-center p-4 m-10 border">
           <h2 className="text-gray-700 text-xl font-semibold mb-2">
             Current Mentors
           </h2>
           <div className="max-w-sm mx-auto bg-white shadow-md rounded-lg overflow-hidden my-4 align-left border-b-4">
             <div className="px-6 py-4">
               <div className="flex items-left">
-                <img className="w-16 h-16 rounded-full mr-4" src={src} />
+                <img className="w-16 h-16 rounded-full mr-4" src={src} alt="Profile"/>
                 <div className="text-left">
                   <div className="text-gray-900 font-bold text-lg mb-1">
                     S.Gopal
@@ -38,8 +56,8 @@ function CustomerMentor() {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col items-left justify-center p-4 m-10 border ">
-          <span className="  text-xl font-semibold text-gray-700">
+        <div className="flex flex-col items-left justify-center p-4 m-10 border">
+          <span className="text-xl font-semibold text-gray-700">
             All Mentors
           </span>
           <div className="flex justify-start p-10 text-md mx-8">
@@ -58,127 +76,80 @@ function CustomerMentor() {
               Add Mentor Hour
             </button>
           </div>
-          <div className="overflow-x-auto sm:-mx-5 lg:-mx-8">
-            <div className="py-2 inline-block min-w-full sm:px-4 lg:px-8">
-              <div className="overflow-hidden">
-                <table className="min-w-full">
-                  <thead className="bg-white border-b">
-                    <tr>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        Profile
-                      </th>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        Name
-                      </th>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        Institute
-                      </th>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        Startups
-                      </th>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        View
-                      </th>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        Request
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    <tr>
-                      <td
-                        colSpan="7"
-                        className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
-                        No data available
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+          <div className="ag-theme-alpine" style={{ height: 400, width: '100%' }}>
+            <AgGridReact
+              columnDefs={columnDefs}
+              rowData={rowData}
+              domLayout='autoHeight'
+              pagination={true}
+              paginationPageSize={10}
+              overlayNoRowsTemplate='<span class="ag-overlay-loading-center">No data available</span>'
+            />
           </div>
         </div>
-      </div>
-      <Addmentor isVisible={showAddmentor} onClose={() => setAddmentor(false)}>
-        <div>
-          <form onSubmit={setAddmentor}>
-            <div className="flex justify-start p-2 text-lg ">
-              <span className="flex-grow font-bold">Add Mentor Hour</span>
-            </div>
-            <div className="grid grid-cols-2 gap-4 ">
-              <div>
-                <select
-                  id="options"
-                  className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                  placeholder="Gender"
-                >
-                  <option value="">Select Startup</option>
-                  <option value="nirmaan">Nirmaan </option>
-                  <option value="nirmaan">Nirmaan </option>
-                </select>
-              </div>
-              <div>
-                <select
-                  id="options"
-                  className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                  placeholder="Gender"
-                >
-                  <option value="Mentor">Select Mentor</option>
-                  <option value="sir">OIE </option>
-                </select>
-              </div>
-              <div>
-                <input
-                  type="Date"
-                  className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                  placeholder="Select Date"
-                ></input>
-              </div>
-              <div>
-                <input
-                  type="Time"
-                  className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                  placeholder="Select Time"
-                ></input>
-              </div>
-            </div>
-          </form>
+        <Addmentor isVisible={showAddmentor} onClose={() => setAddmentor(false)}>
           <div>
-            <textarea
-              id="description"
-              name="description"
-              rows="4"
-              className=" mt-6 w-full p-2 border border-gray-300 rounded resize-none"
-              placeholder="Description"
-            ></textarea>
+            <form onSubmit={(e) => e.preventDefault()}>
+              <div className="flex justify-start p-2 text-lg">
+                <span className="flex-grow font-bold">Add Mentor Hour</span>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <select
+                    id="options"
+                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    placeholder="Select Startup"
+                  >
+                    <option value="">Select Startup</option>
+                    <option value="nirmaan">Nirmaan</option>
+                  </select>
+                </div>
+                <div>
+                  <select
+                    id="options"
+                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    placeholder="Select Mentor"
+                  >
+                    <option value="Mentor">Select Mentor</option>
+                    <option value="sir">OIE</option>
+                  </select>
+                </div>
+                <div>
+                  <input
+                    type="date"
+                    className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    placeholder="Select Date"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="time"
+                    className="mt-3 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    placeholder="Select Time"
+                  />
+                </div>
+              </div>
+            </form>
+            <div>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                className="mt-6 w-full p-2 border border-gray-300 rounded resize-none"
+                placeholder="Description"
+              ></textarea>
+            </div>
+            <button
+              type="button"
+              className="active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white"
+            >
+              Update
+            </button>
           </div>
-          <button
-            type="button"
-            className=" active:scale-[.90] active:duration-70 hover:scale-[1.02] border border-green-300 rounded-md bg-green-500 transition-all ease-in-out md:text-xs font-semibold p-2 text-white"
-          >
-            Update
-          </button>
-        </div>
-      </Addmentor>
+        </Addmentor>
+      </div>
     </div>
   );
 }
+
 export default CustomerMentor;

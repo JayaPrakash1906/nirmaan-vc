@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
+import { AgGridReact } from 'ag-grid-react';
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/ag-theme-alpine.css';
 import SideBar from "../../components/SideBar";
 import NavBar from "../../../components/NavBar";
-
 
 const contacts = [
   {
@@ -9,14 +11,49 @@ const contacts = [
     designation: "tech_support",
     organisation: "OIE",
     connectFor: "tech",
+    
   },
   {
     name: "Aakarsh Naidu",
     designation: "CEO",
     organisation: "Startupreneur",
     connectFor: "Mentoring",
+       button:"connecct"       
   },
 ];
+const actionButton=(Params)=>{
+  console.log(Params);
+}
+const DataTable = ({ rowData }) => {
+  const columnDefs = [
+    { headerName: 'Name', field: 'name', sortable: true, filter: true },
+    { headerName: 'Designation', field: 'designation', sortable: true, filter: true },
+    { headerName: 'Organisation', field: 'organisation', sortable: true, filter: true },
+    { headerName: 'Connect', field: 'connectFor', sortable: true, filter: true }
+  ];
+
+  return (
+    <div className="flex flex-col p-2 m-14 mt-2 border">
+      <div className="mb-6">
+        <div className="grid grid-cols-2 gap-4 mt-6 ml-4">
+          <input
+            type="text"
+            className="border border-blue-300 rounded-md bg-white-500 text-md mr-8 md:h-[34px] sm:w-[50%] mb-4"
+            placeholder="search for startups"
+          />
+        </div>
+      </div>
+      <div className="ag-theme-alpine" style={{ height: 400, width: '100%' }}>
+        <AgGridReact
+          columnDefs={columnDefs}
+          rowData={rowData}
+          pagination={true}
+          paginationPageSize={10}
+        />
+      </div>
+    </div>
+  );
+};
 
 function CustomerContacts() {
   return (
@@ -27,7 +64,7 @@ function CustomerContacts() {
 
       <div className="flex-grow">
         <NavBar />
-        <div className="items-center px-4 py-4 mt-2 sm:mt-10 md:mt-1 p-8 bg-gray-200">
+        <div className="items-center px-4 py-4 mt-2 sm:mt-10 md:mt-1 p-8">
           <span className=" p-5 text-slate-500 text-md ">
             Dashboard / Contacts
           </span>
@@ -44,81 +81,10 @@ function CustomerContacts() {
             My Connections
           </button>
         </div>
-        <div className=" flex flex-col items-left justify-center p-2 m-16 border ">
-          <h2 className="text-gray-700 text-xl font-semibold mb-2">Contacts</h2>
-          <div className="flex flex-col">
-            <div className="overflow-x-auto sm:-mx-5 lg:-mx-8">
-              <div className="py-2 inline-block min-w-full sm:px-4 lg:px-8">
-                <div className="overflow-hidden">
-                  <table className="min-w-full">
-                    <thead className="bg-white border-b">
-                      <tr>
-                        <th
-                          scope="col"
-                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                        >
-                          Name
-                        </th>
-                        <th
-                          scope="col"
-                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                        >
-                          Designation
-                        </th>
-                        <th
-                          scope="col"
-                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                        >
-                          Organisation
-                        </th>
-                        <th
-                          scope="col"
-                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                        >
-                          Connect for
-                        </th>
-                        <th
-                          scope="col"
-                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                        >
-                          Action
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {contacts.map((contact, index) => (
-                        <tr
-                          key={index}
-                          className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
-                        >
-                          <td className="text-sm text-gray-900 font-roboto px-6 py-4 whitespace-nowrap">
-                            {contact.name}
-                          </td>
-                          <td className="text-sm text-gray-900 font-roboto px-6 py-4 whitespace-nowrap">
-                            {contact.designation}
-                          </td>
-                          <td className="text-sm text-gray-900 font-roboto px-6 py-4 whitespace-nowrap">
-                            {contact.organisation}
-                          </td>
-                          <td className="text-sm text-gray-900 font-roboto px-6 py-4 whitespace-nowrap">
-                            {contact.connectFor}
-                          </td>
-                          <td className="text-sm text-gray-900 font-roboto px-6 py-4 whitespace-nowrap">
-                            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                              Connect
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <DataTable rowData={contacts} />
       </div>
     </div>
   );
 }
+
 export default CustomerContacts;

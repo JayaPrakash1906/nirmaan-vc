@@ -9,7 +9,7 @@ import Mentors from './pages/Mentors/Mentor';
 import AddStartup from './pages/startups/AddStartup';
 import Events from './pages/Events/Events';
 import MentorShip from './pages/Mentorship/MentorShip';
-import Settings from './pages/Settings/Settings'
+import Settings from './pages/Settings/Settings';
 import CreateNewEvent from './pages/Events/CreateNewEvent';
 import AddNewMentor from './pages/Mentors/AddNewMentor';
 import Contacts from './pages/Connections/Contacts';
