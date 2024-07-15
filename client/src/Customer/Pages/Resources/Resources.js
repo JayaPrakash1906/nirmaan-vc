@@ -37,6 +37,7 @@ function Resources() {
         ['John Doe', 'john@example.com', 'TN', 'USA'],
         ['Jane Doe', 'jane@example.com','KL', 'Canada'],
         ['Max Mustermann', 'max@example.com', 'AP', 'Germany'],
+        ['Prasath Narayanan', 'techsupport@iitm.ac.in', 'TamilNadu', 'India']
       ],
       startY: 80,
       margin: { top: 10, left: 10, right: 10 },

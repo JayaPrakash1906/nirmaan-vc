@@ -7,6 +7,7 @@ import { AgGridReact } from 'ag-grid-react'; // Ensure AgGridReact is imported
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 
+
 function CustomerMentor() {
   const [showAddmentor, setAddmentor] = useState(false);
   const columnDefs = [
@@ -23,7 +24,7 @@ function CustomerMentor() {
     { profile: "Profile 1", name: "John Doe", institute: "ABC Institute", startups: 5, view: "View", request: "Request" },
     { profile: "Profile 2", name: "Jane Smith", institute: "XYZ Institute", startups: 3, view: "View", request: "Request" }
   ];
-
+    
   return (
     <div className="flex">
       <section className="w-[66px]">
@@ -112,6 +113,7 @@ function CustomerMentor() {
                   >
                     <option value="Mentor">Select Mentor</option>
                     <option value="sir">OIE</option>
+                    <option value='CFI'>CFI</option>
                   </select>
                 </div>
                 <div>

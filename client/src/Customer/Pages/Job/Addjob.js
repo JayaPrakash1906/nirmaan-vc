@@ -42,14 +42,15 @@ function Addjob()
                                                                     <option value="Job Type">Job Type</option>
                                                                     <option value="Full Time"> Full Time</option>
                                                                     <option value="Part Time">Part Time</option>
+                                                                    <option value='Remote'> Remote </option>
                                                                     <option value="Intern">Intern</option>
                                                           </select>
                                                           <select id="options"
                                                                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Gender" >
                                                                     <option value="Renumeration">Renumeration</option>
-                                                                    <option value="">Male </option>
-                                                                    <option value="option2">Female</option>
-                                                                    <option value="option3">Others</option>
+                                                                    <option value="Not Paid">Not Paid </option>
+                                                                    <option value="Paid">Paid</option>
+                                                                    <option value="Others">Others</option>
                                                           </select></div>
                                                         <div>
                                                             
