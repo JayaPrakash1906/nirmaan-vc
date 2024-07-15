@@ -55,7 +55,7 @@ function Profile() {
             </div>
           </div>
           <p className="text-gray-700 ">
-            We are a knowledge-based company providing enhanced solutions to
+            We are a knowledge -based company providing enhanced solutions to
             industries.
           </p>
         </div>

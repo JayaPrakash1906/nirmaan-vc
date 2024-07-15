@@ -33,8 +33,8 @@ import CustomerContacts from './Customer/Pages/Contact/contact.js';
 import Jobs from './Customer/Pages/Job/Job.js';
 import Addjob from './Customer/Pages/Job/Addjob.js';
 import Resources from './Customer/Pages/Resources/Resources.js';
-import MyConnections from './Customer/Pages/Contact/MyConnections.js';
 import RaiseRequest from './Customer/components/RaiseRequest.js';
+import MyConnections from './Customer/Pages/Contact/MyConnections.js';
 
 function App() {
   const [LoggedIn, setLoggedIn] = useState(false);
