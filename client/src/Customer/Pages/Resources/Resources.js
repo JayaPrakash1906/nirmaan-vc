@@ -5,13 +5,14 @@ import { FaDownload, FaFileExcel, FaFilePdf, FaFilePowerpoint } from "react-icon
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
+
 function Resources() {
   const files = [
-    { name: "DE Step 1 - 2 Pager", type: "pdf" },
-    { name: "DE Step 2 - 3 Pager", type: "pdf" },
-    { name: "DE Step 3 - 2 Pager", type: "pdf" },
-    { name: "DE Step 4 - 2 Pager", type: "pdf" },
-    { name: "DE Step 5 - 2 Pager", type: "pdf" },
+    { name: "DE Step 1", type: "pdf" },
+    { name: "DE Step 2", type: "pdf" },
+    { name: "DE Step 3", type: "pdf" },
+    { name: "DE Step 4", type: "pdf" },
+    { name: "DE Step 5", type: "pdf" },
     { name: "DE Overview PPT", type: "ppt" },
     { name: "Market Segmentation Template", type: "xlsx" },
   ];
@@ -31,11 +32,11 @@ function Resources() {
 
     // Adding a table
     doc.autoTable({
-      head: [['Name', 'Email', 'Country']],
+      head: [['Name', 'Email','state', 'Country']],
       body: [
-        ['John Doe', 'john@example.com', 'USA'],
-        ['Jane Doe', 'jane@example.com', 'Canada'],
-        ['Max Mustermann', 'max@example.com', 'Germany'],
+        ['John Doe', 'john@example.com', 'TN', 'USA'],
+        ['Jane Doe', 'jane@example.com','KL', 'Canada'],
+        ['Max Mustermann', 'max@example.com', 'AP', 'Germany'],
       ],
       startY: 80,
       margin: { top: 10, left: 10, right: 10 },
