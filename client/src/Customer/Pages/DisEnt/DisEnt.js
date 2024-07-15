@@ -28,7 +28,7 @@ function DisEnt() {
       "Estimate your TAM size",
       "Design a Business Model",
     ],
-    "Graduation": [
+    Graduation: [
       "Set your pricing framework",
       "Estimate the LTV",
       "Map the sale process",
