@@ -125,7 +125,8 @@ function Profile() {
                 </button>
               </div>
             </div>{" "}
-            <div className="">1.Progress Review Templete</div>
+            <div className="">1.Progress Review Templete
+            </div>
             <div>
               {" "}
               <input
@@ -296,15 +297,16 @@ function Profile() {
               <span className="flex-grow font-bold">Upload</span>
               <button
                 type="button"
-                className="text-white bg-gray-300 p-1 rounded-md font-bold mr-2"
+                className="text-red-500 bg-gray-100 p-1 rounded-sm font-semibold text-sm mr-2"
+                onClick={() => setUploadocument(false)}
               >
-                close
+                Cancel
               </button>
               <button
-                type="button"
-                className="text-white bg-gray-600 p-1 rounded-md font-bold"
+                type="submit"
+                className="text-white bg-green-600 p-1 rounded-sm font-semibold text-sm"
               >
-                Submit
+                Save
               </button>
             </div>
             <div className="grid grid-rows-2 gap-4 ">
@@ -322,7 +324,7 @@ function Profile() {
                   placeholder="Upload pdf"
                 />
               </div>
-              *Upload Pdf Only
+              <div className="text-xs text-red-500">*Upload Pdf Only </div>
             </div>
           </form>
         </div>

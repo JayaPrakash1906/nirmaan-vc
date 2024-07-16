@@ -158,7 +158,7 @@ function DisEnt() {
               </div>
               <div className="sm:col-span-2 p-4">
                 <div className="font-semibold mb-4">All Steps</div>
-                {renderSteps()}
+                {renderSteps()} 
               </div>
             </div>
           </div>
