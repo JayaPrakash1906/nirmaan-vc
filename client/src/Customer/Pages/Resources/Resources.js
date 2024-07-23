@@ -12,7 +12,6 @@ function Resources() {
     { name: "DE Step 2", type: "pdf" },
     { name: "DE Step 3", type: "pdf" },
     { name: "DE Step 4", type: "pdf" },
-    { name: "DE Step 5", type: "pdf" },
     { name: "DE Overview PPT", type: "ppt" },
     { name: "Market Segmentation Template", type: "xlsx" },
   ];

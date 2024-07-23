@@ -223,11 +223,14 @@ function Profile() {
                 />
               </div>
               <div>
-                <input
-                  type="text"
-                  className="border border-blue-300 rounded-md bg-white md:h-[45px] sm:w-full "
-                  placeholder="Role"
-                />
+              <select
+                id="Role"
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+              >
+                <option value="Role">Role</option>
+                <option value="Student">Student </option>
+                <option value="Faculty">Faculty</option>
+              </select>
               </div>
             </div>
           </form>

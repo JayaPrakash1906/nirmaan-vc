@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { FaBars, FaBook, FaBuilding, FaBusinessTime, FaCalendar, FaChalkboardTeacher, FaFileExcel, FaFilePdf, FaGraduationCap, FaHome, FaJava, FaJoint, FaLayerGroup, FaPeopleArrows, FaPhone, FaPuzzlePiece, FaResolving, FaRestroom, FaSearch, FaSourcetree, FaTasks, FaUser, FaUsers} from 'react-icons/fa';
-import { FaFile, FaGroupArrowsRotate, FaPersonRifle, FaRegSquarePlus, FaUpwork } from 'react-icons/fa6';
+import { FaBusinessTime, FaFilePdf, FaHome, FaLayerGroup, FaPhone, FaPuzzlePiece, FaUser, FaUsers} from 'react-icons/fa';
+import { FaFile } from 'react-icons/fa6';
 
 function SideBar() {
     const [userRole, setUserRole] = useState('customer');  
@@ -9,7 +9,9 @@ function SideBar() {
   return (
     <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-800 text-dark shadow-lg">
       
-      
+      <SideBarLink href="/customer/home">
+          <SideBarIcon icon={<FaHome size="16"/>} tooltipText="Home" />
+      </SideBarLink>
       <SideBarLink href="/customer/Profile">
           <SideBarIcon icon={<FaUser size="16"/>} tooltipText="Profile" />
       </SideBarLink>

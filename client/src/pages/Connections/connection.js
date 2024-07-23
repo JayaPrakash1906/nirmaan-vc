@@ -73,6 +73,23 @@ function Connections() {
                                                                   </td>
                                                                   <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
                                                                       <a href="/">+1234567</a>
+                                                                  </td>  
+                                                              </tr>
+                                                              <tr className="bg-white">
+                                                                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
+                                                                      <a href="/"  className="font-bold text-value-500 hover:underline">Prof. Prabhu Rajagopal</a>
+                                                                  </td>
+                                                                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
+                                                                      <a href="/">+12344566</a>
+                                                                  </td>
+                                                                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
+                                                                        <span className="p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 bg-yellow-200 rounded-lg bg-opacity-60">SOMFIN</span>
+                                                                  </td>
+                                                                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
+                                                                      <a href="/">Strategic Advisor</a>
+                                                                  </td>
+                                                                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
+                                                                      <a href="/">+1234567</a>
                                                                   </td>
                                                               </tr>
                                                               <tr className="bg-white">

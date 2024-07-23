@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import lity from 'lity';
 import SideBar from '../../components/SideBar';
 import NavBar from '../../../components/NavBar';
 const CustomerHome = () => {
@@ -11,7 +10,6 @@ const CustomerHome = () => {
                 </section>
                 <section id="" className="flex-grow">
                 <NavBar />
-            
                 </section>
         </div>
     )

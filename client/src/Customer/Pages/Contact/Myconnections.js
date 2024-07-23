@@ -14,7 +14,7 @@ const MyConnections = () => {
     { headerName: 'Name', field: 'name', sortable: true, filter: true },
     { headerName: 'Designation', field: 'designation', sortable: true, filter: true },
     { headerName: 'Organisation', field: 'organisation', sortable: true, filter: true },
-    { headerName: 'Connect for', field: 'connectFor', sortable: true, filter: true },
+    { headerName: 'Connect for', field: 'connectFor',  },
     { headerName: 'Action', field: 'action' },
   ];
 
@@ -52,7 +52,7 @@ const MyConnections = () => {
               rowData={rowData}
               domLayout='autoHeight'
               pagination={true}
-              paginationPageSize={10}
+              paginationPageSize={15}
               overlayNoRowsTemplate='<span>No data available</span>'
             />
           </div>

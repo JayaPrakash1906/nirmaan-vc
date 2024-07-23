@@ -46,7 +46,7 @@ function Addjob()
                                                                     <option value='Remote'> Remote </option>
                                                                     <option value="Intern">Intern</option>
                                                           </select>
-                                                          <select id="options"
+                                                          <select id="Renumeration"
                                                                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Gender" >
                                                                     <option value="Renumeration">Renumeration</option>
                                                                     <option value="Not Paid">Not Paid </option>
@@ -56,7 +56,7 @@ function Addjob()
                                                         <div>
                                                             
                                                            </div>
-                                                           <textarea id="description" name="description" rows="4" className="mt-12 w-full p-2 border border-blue-300 rounded resize-none" placeholder="Requirements" ></textarea>
+                                                           <textarea id="Requirements" name="Requirements" rows="4" className="mt-12 w-full p-2 border border-blue-300 rounded resize-none" placeholder="Requirements" ></textarea>
                                                            <textarea id="description" name="description" rows="4" className="mt-12 w-full p-2 border border-blue-300 rounded mb-4 resize-none" placeholder="Description" ></textarea>
                                                            <div className="flex justify-center "> 
                                                 <button type="Preview" className="active:scale-[.90] active:duration-70 hover:scale-[1.02] px-4 py-2 bg-gray-300 text-gray-700 font-bold rounded hover:bg-gray-400  ">Preview</button>
